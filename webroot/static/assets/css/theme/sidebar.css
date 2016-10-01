@@ -1,0 +1,1304 @@
+/* ==============================================
+1.  LEFT SIDEBAR
+    A. Sidebar Default/Open State
+    B. Sidebar Active Item Borders
+    C. Sidebar Misc Elements
+    D. Sidebar Widgets/Menus
+    E. Sidebar Minified State
+    F. Sidebar Default Color Settings
+    G. Sidebar Light Color Settings
+    H. Sidebar Nano Plugin Settings
+    I. Sidebar Responsive Settings
+2.  Right Sidebar
+     A. Default Closed State
+     B. Sidebar Right Panel Menu
+     C. Nano Sidebar Scroller Settings
+3.  Sidebar Actions
+     A. Sidebar Left Toggle
+     B. Sidebar Right Toggle
+     C. Left Sidebar Minified Helper
+     D. Mobile Menu Modifications
+=================================================
+  A. Default Open State
+================================================= */
+/* Sidebar Container */
+#sidebar_left {
+    color: #fff;
+    font-size: 13px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 230px;
+    min-height: 100%;
+    padding-top: 60px;
+    padding-bottom: 40px;
+}
+/* Sidebar Content Container */
+.sidebar-left-content {
+    height: 100%;
+}
+/* Sidebar-Menu */
+.sidebar-menu {
+    padding-bottom: 20px;
+}
+/* Sidebar-Menu Top Level Items */
+.sidebar-menu > li {
+    margin: 0;
+}
+.sidebar-menu > li:first-child {
+    padding-top: 4px;
+}
+/* Sidebar Menu Links */
+/* Sidebar-Menu Top Level Links */
+.sidebar-menu > li > a {
+    padding: 0;
+    line-height: 35px;
+    height: 35px;
+    overflow: hidden;
+}
+/* Sidebar-Menu Top Level - Icon */
+.sidebar-menu > li > a > span:nth-child(1) {
+    float: left;
+    top: 0;
+    line-height: 35px;
+    width: 38px;
+    font-size: 13px;
+    text-align: center;
+    padding-left: 13px;
+}
+/* Sidebar-Menu Top Level - Title */
+.sidebar-menu > li > a > span:nth-child(2) {
+    font-weight: 600;
+    padding-left: 6px;
+}
+/* Sidebar-Menu Top Level - Tray(holds labels,etc) */
+.sidebar-menu li > a > .sidebar-title-tray {
+    position: absolute;
+    right: 13px;
+    top: -2px;
+}
+/* Sidebar-Menu Top Level - Label */
+.sidebar-menu li > a > .sidebar-title-tray .label {
+    padding: .0em .4em .2em;
+    font-size: 11px;
+}
+/* Sidebar-Menu Top Level - Caret */
+.sidebar-menu li > a > span.caret {
+    position: absolute;
+    top: 45%;
+    right: 13px;
+    border-top: 5px solid;
+    border-right: 5px solid transparent;
+    border-left: 5px solid transparent;
+}
+/* Open Menu Item Caret - we simply flip the carets border */
+.sidebar-menu li > a.menu-open > span.caret {
+    border-top: 0;
+    border-bottom: 5px solid;
+}
+/* Sidebar-Menu Sub Level */
+.sidebar-menu > li > ul {
+    clear: both;
+    display: none;
+    width: 230px;
+    height: auto;
+}
+.sidebar-menu li > a.menu-open + ul {
+    display: block;
+}
+/* Sidebar-Menu Sub Level Items */
+.sidebar-menu > li > ul > li > a {
+    padding: 11px 20px 11px 30px;
+}
+/* Sidebar-Menu Sub Level - first and last items */
+.sidebar-menu > li > ul > li:first-child > a {
+    padding-top: 14px;
+}
+.sidebar-menu > li > ul > li:last-child > a {
+    padding-bottom: 17px;
+}
+/* Sidebar-Menu Sub Level Item - Title */
+.sidebar-menu > li > ul > li > a > span:nth-child(1) {
+    margin-right: 10px;
+    font-size: 11px;
+}
+/* Sidebar-Menu Sub Level Item - Label */
+.sidebar-menu > li > ul > li > a > span.label {
+    float: right;
+    line-height: 17px;
+}
+/* Sidebar-Menu Multi-level (submenu inside a submenu and so on) */
+.sidebar-menu > li > ul > li ul {
+    clear: both;
+    display: none;
+    width: 230px;
+    height: auto;
+}
+/* Sidebar-Menu Multi-level - Links */
+.sidebar-menu > li > ul > li > ul li a {
+    padding: 9px 12px 9px 30px;
+}
+.sidebar-menu > li > ul > li > ul li:last-child a {
+    padding-bottom: 13px;
+}
+/* Sidebar-Menu Multi-level - Label(xs) */
+.sidebar-menu > li > ul > li > ul li a .label.label-xs {
+    float: right;
+    line-height: 17px;
+}
+/*===============================================
+  B. Sidebar-Menu Active Item Borders
+================================================= */
+/* Top Level - Active Item Border */
+.sidebar-menu > li > a.menu-open:after,
+.sidebar-menu > li.active > a:after,
+.sidebar-menu > li:hover > a:after,
+.sidebar-menu > li:focus > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #AAA;
+}
+/* Sub Level - Active Item Border */
+.sidebar-menu > li > ul > li > a.menu-open:after,
+.sidebar-menu > li > ul > li.active > a:after,
+.sidebar-menu > li > ul > li:hover > a:after,
+.sidebar-menu > li > ul > li:focus > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: 3px;
+    background: #AAA;
+}
+/* Multi Level - Active Item Border */
+.sidebar-menu > li > ul > li > ul > li.active > a:after,
+.sidebar-menu > li > ul > li > ul > li:hover > a:after,
+.sidebar-menu > li > ul > li > ul > li:focus > a:after {
+    content: "";
+    position: absolute;
+    left: 0;
+    top: 5%;
+    height: 90%;
+    width: 3px;
+    background: #999;
+}
+/*===============================================
+  C. Sidebar Misc
+================================================= */
+/* Sidebar labels */
+.sidebar-menu .sidebar-label {
+    text-transform: uppercase;
+    color: #70829a;
+    font-weight: 600;
+    padding-left: 18px;
+    padding-bottom: 3px;
+    font-size: 12px;
+}
+/* Sidebar Project Links */
+/* Sidebar Progress Bars */
+.sidebar-menu .sidebar-stat .progress {
+    clear: both;
+    background-color: #AAA;
+    background-color: rgba(0, 0, 0, 0.15);
+}
+/* Sidebar Progress Bars Titles */
+.sidebar-menu .sidebar-stat > a {
+    height: auto;
+    overflow: visible;
+}
+/* Sidebar Toggle Button */
+.sidebar-toggle-mini {
+    width: 35px;
+    height: 32px;
+    padding: 7px 0;
+}
+.sidebar-toggle-mini a {
+    display: block;
+    position: absolute;
+    right: 0;
+    text-align: center;
+    padding: 6px 6px 5px;
+    background: rgba(0, 0, 0, 0.15);
+}
+.sidebar-toggle-mini span {
+    position: relative;
+    color: #999;
+    font-size: 16px;
+    -webkit-transition: all ease-in-out 0.2s;
+    transition: all ease-in-out 0.2s;
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+.sidebar-toggle-mini:hover span {
+    color: #EEE;
+}
+/*===============================================
+  C. Sidebar "top" - Horizontal Menu
+     Activated by adding the ".sidebar-top"
+     class to the "#sidebar_left" element
+================================================= */
+body.sb-top .navbar + #sidebar_left + #content_wrapper,
+body.sb-top .navbar.navbar-static-top + #sidebar_left + #content_wrapper {
+    margin-left: 0;
+    padding-top: 55px;
+}
+body.sb-top .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper {
+    margin-left: 0;
+    padding-top: 115px;
+}
+body.sb-top #toggle_sidemenu_r {
+    display: none !important;
+}
+body.sb-top #topbar-dropmenu {
+    top: 0;
+}
+body.sb-top #topbar.affix {
+    margin-left: 0;
+}
+body.sb-top.boxed-layout #topbar.affix {
+    width: 1140px !important;
+    margin-left: 0;
+    margin-right: 0;
+    left: auto;
+    right: auto;
+}
+body.sb-top.boxed-layout.sb-r-o #topbar.affix {
+    width: 840px!important;
+}
+body.sb-top .navbar-nav.navbar-right,
+body.sb-top .navbar-nav.navbar-right:last-child {
+    margin-right: 0;
+}
+body.sb-top .navbar-branding {
+    width: 160px;
+}
+body.sb-top #sidebar_left {
+    overflow: visible;
+    z-index: 1028;
+    width: 100%;
+    min-height: 0;
+    margin-top: 60px;
+    padding: 0;
+    border: 0;
+}
+body.sb-top #sidebar_left .sidebar-toggle-mini,
+body.sb-top #sidebar_left .sidebar-menu .sidebar-label,
+body.sb-top #sidebar_left .sidebar-menu li > ul > li > ul > li .label,
+body.sb-top #sidebar_left .sidebar-menu .sidebar-title-tray {
+    display: none !important;
+}
+body.sb-top #sidebar_left .sidebar-menu {
+    padding-bottom: 0;
+}
+body.sb-top #sidebar_left .sidebar-menu > li {
+    float: left;
+}
+body.sb-top #sidebar_left .sidebar-menu > li:first-child {
+    padding-top: 0;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > a {
+    overflow: visible;
+    color: #bbbbbb;
+    padding: 0 18px;
+    height: 55px;
+    line-height: 55px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li.active > a,
+body.sb-top #sidebar_left .sidebar-menu > li:hover > a,
+body.sb-top #sidebar_left .sidebar-menu > li > a.menu-open,
+body.sb-top #sidebar_left .sidebar-menu > li > a:hover,
+body.sb-top #sidebar_left .sidebar-menu > li > a:focus {
+    color: inherit;
+    background-color: #282d33;
+    -webkit-transition: background-color 0.2s ease;
+    transition: background-color 0.2s ease;
+}
+body.sb-top #sidebar_left .sidebar-menu > li.active > a {
+    color: #ffffff !important;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > a > .sidebar-title {
+    font-weight: 400;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > a > span:nth-child(1) {
+    width: auto;
+    padding-left: 0;
+    padding-right: 5px;
+    line-height: 55px;
+}
+body.sb-top #sidebar_left .sidebar-menu li > a > span.caret {
+    color: #858483;
+    position: relative;
+    top: 0;
+    right: 0;
+    margin-left: 5px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul {
+    position: absolute;
+    left: 0;
+    top: 100%;
+    width: 195px;
+    height: auto;
+    border-left: 0;
+    padding-bottom: 2px;
+    overflow: hidden;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li {
+    overflow: hidden;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > a {
+    padding: 8px 15px 8px 15px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > a.menu-open:after,
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li.active > a:after,
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li:hover > a:after,
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li:focus > a:after {
+    left: 1px;
+    width: 3px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li ul {
+    width: 195px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > a .caret {
+    position: absolute;
+    top: 15px;
+    right: 10px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > ul > li a {
+    padding: 8px 15px 8px 20px;
+}
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > ul > li.active > a:after,
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > ul > li:hover > a:after,
+body.sb-top #sidebar_left .sidebar-menu > li > ul > li > ul > li:focus > a:after {
+    left: 1px;
+    width: 3px;
+}
+body.sb-top #sidebar_left .sidebar-menu li > ul > li > a.menu-open + ul {
+    display: block !important;
+}
+body.sb-top #sidebar_left.sidebar-light {
+    border-right: 0;
+    -webkit-box-shadow: 0 1px 0 #DDD;
+    box-shadow: 0 1px 0 #DDD;
+}
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li > a > span:nth-child(2) {
+    color: #888;
+}
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li.active > a,
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li:hover > a,
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li > a.menu-open,
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li > a:hover,
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li > a:focus {
+    background-color: #f2f2f2;
+}
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li > ul {
+    top: 99%;
+    border: 0;
+    -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 3px 3px rgba(0, 0, 0, 0.2);
+}
+body.sb-top #sidebar_left.sidebar-light .sidebar-menu li > ul > li > a {
+    padding: 9px 15px 8px 17px;
+}
+body.sb-top.sb-top-sm .navbar + #sidebar_left + #content_wrapper,
+body.sb-top.sb-top-sm .navbar.navbar-static-top + #sidebar_left + #content_wrapper {
+    padding-top: 45px;
+}
+body.sb-top.sb-top-sm .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper {
+    padding-top: 105px;
+}
+body.sb-top.sb-top-sm #sidebar_left {
+    height: 45px;
+}
+body.sb-top.sb-top-sm #sidebar_left .sidebar-menu > li > a {
+    height: 45px;
+    line-height: 45px;
+    padding: 0 16px;
+}
+body.sb-top.sb-top-sm #sidebar_left .sidebar-menu > li > a > span:nth-child(1) {
+    font-size: 12px;
+    line-height: 45px;
+}
+body.sb-top.sb-top-lg .navbar + #sidebar_left + #content_wrapper,
+body.sb-top.sb-top-lg .navbar.navbar-static-top + #sidebar_left + #content_wrapper {
+    padding-top: 75px;
+}
+body.sb-top.sb-top-lg .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper {
+    padding-top: 135px;
+}
+body.sb-top.sb-top-lg #sidebar_left {
+    height: 75px;
+}
+body.sb-top.sb-top-lg #sidebar_left .sidebar-menu > li > a {
+    height: 75px;
+    line-height: inherit;
+    text-align: center;
+    padding: 0 10px;
+}
+body.sb-top.sb-top-lg #sidebar_left .sidebar-menu > li > a > span:nth-child(1) {
+    width: 100%;
+    font-size: 20px;
+    line-height: 40px;
+    padding-top: 4px;
+}
+body.sb-top.sb-top-lg #sidebar_left .sidebar-menu > li > a > .sidebar-title {
+    padding-left: 0;
+}
+body.sb-top.sb-top-collapsed #sidebar_left {
+    top: -110px;
+}
+body.sb-top.sb-top-collapsed .navbar + #sidebar_left + #content_wrapper,
+body.sb-top.sb-top-collapsed .navbar.navbar-static-top + #sidebar_left + #content_wrapper {
+    padding-top: 0px;
+}
+body.sb-top.sb-top-collapsed .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper {
+    padding-top: 60px;
+}
+body.sb-top.sb-top-collapsed #toggle_sidemenu_t .fa-caret-up {
+    -webkit-transform: rotate(180deg);
+    transform: rotate(180deg);
+}
+body.sb-top.sb-top-collapsed .navbar[class*='bg-'] #toggle_sidemenu_t .fa-caret-up {
+    color: #FFF;
+}
+@media (max-width: 1100px) {
+    body.sb-top #content_wrapper {
+        margin-left: 0 !important;
+        left: 0 !important;
+    }
+}
+@media (max-width: 900px) {
+    body.sb-top #sidebar_left {
+        top: 0 !important;
+        opacity: 0 !important;
+        visibility: hidden !important;
+        height: auto !important;
+        -webkit-transition: all 0.2s ease;
+        transition: all 0.2s ease;
+    }
+    body.sb-top #sidebar_left .sidebar-menu > li {
+        float: none;
+        width: 100%;
+    }
+    body.sb-top #sidebar_left .sidebar-menu > li > a {
+        height: 45px !important;
+        line-height: 45px !important;
+        padding: 0 16px !important;
+        text-align: left !important;
+    }
+    body.sb-top #sidebar_left .sidebar-menu > li > a > span:nth-child(1) {
+        width: auto !important;
+        font-size: 12px !important;
+        line-height: 45px !important;
+        padding: 0 !important;
+    }
+    body.sb-top #sidebar_left .sidebar-menu > li > a > .sidebar-title {
+        padding-left: 8px !important;
+    }
+    body.sb-top #sidebar_left .sidebar-menu > li > ul,
+    body.sb-top #sidebar_left .sidebar-menu > li > ul > li ul {
+        position: relative;
+        width: auto;
+    }
+    body.sb-top #sidebar_left.sidebar-light {
+        border-right: 0;
+        -webkit-box-shadow: 0 1px 0 #DDD;
+        box-shadow: 0 1px 0 #DDD;
+    }
+    body.sb-top #sidebar_left.sidebar-light .sidebar-menu > li > ul {
+        border: 0;
+        box-shadow: none;
+    }
+    body.sb-top #sidebar_left.sidebar-light .sidebar-menu li > ul > li > a {
+        padding: 9px 15px 8px 17px;
+    }
+    body.sb-top .navbar-branding {
+        width: 0;
+        display: none;
+    }
+    body.sb-top #toggle_sidemenu_t {
+        width: 44px;
+    }
+    body.sb-top .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper {
+        padding-top: 60px !important;
+    }
+    body.sb-top.sb-top-collapsed #sidebar_left {
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
+@media (min-width: 901px) {
+    body.sb-top .sidebar-menu > li > a.menu-open + ul {
+        display: none;
+    }
+    body.sb-top .sidebar-menu > li:hover > a + ul {
+        z-index: 1;
+        display: block !important;
+    }
+}
+/*===============================================
+  D. Sidebar Widgets
+================================================= */
+/* Widget Wrapper */
+.sidebar-widget {
+    position: relative;
+    padding: 8px 13px;
+    height: 51px;
+    /* Author Widget */
+    /* Menu Widget - A Slide-Down Menu. Hidden by default */
+}
+.sidebar-widget + .sidebar-widget {
+    margin-top: 18px;
+}
+.sidebar-widget.author-widget {
+    margin-top: 15px;
+}
+.sidebar-widget.author-widget .media-left img {
+    max-width: 40px;
+    border: 2px solid #888;
+    border-radius: 50%;
+}
+.sidebar-widget.author-widget .media-links a {
+    display: inline-block;
+    margin-top: 2px;
+    margin-bottom: 2px;
+    color: #70829a;
+    font-size: 12px;
+    text-decoration: none;
+}
+.sidebar-widget.author-widget .media-links a:hover {
+    color: #FFF;
+}
+.sidebar-widget.author-widget .media-body {
+    padding-left: 3px;
+    color: #FFF;
+}
+.sidebar-widget.author-widget.menu-widget-open .media-links a.sidebar-menu-toggle {
+    color: #FFF;
+}
+.sidebar-widget.menu-widget {
+    display: none;
+    position: relative;
+    left: 0;
+    top: 0;
+    height: 130px;
+    width: 100%;
+    padding: 10px;
+    background-color: #282d33;
+    border-top: 1px solid #24282d;
+    border-bottom: 1px solid #24282d;
+    /* Menu Links */
+    /* Menu Title(hidden) */
+    /* Menu Icons */
+}
+.sidebar-widget.menu-widget a {
+    position: relative;
+    display: block;
+    padding: 12px 5px 12px;
+    margin-bottom: 3px;
+    transition: all 0.2s ease;
+}
+.sidebar-widget.menu-widget a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
+}
+.sidebar-widget.menu-widget a h5 {
+    display: none;
+}
+.sidebar-widget.menu-widget a span {
+    color: #dddddd;
+    font-size: 24px;
+    transition: all 0.3s ease;
+}
+.sidebar-widget.menu-widget a:hover span {
+    color: #f6bb42;
+}
+.sidebar-widget.search-widget {
+    height: 40px;
+    padding: 8px 6px;
+    background-color: #282d33;
+    border-top: 1px solid #24282d;
+    border-bottom: 1px solid #24282d;
+}
+.sidebar-widget.search-widget input,
+.sidebar-widget.search-widget .input-group-addon {
+    color: #70829a;
+    height: 22px;
+    padding: 3px;
+    font-size: 14px;
+    border-color: transparent;
+    background-color: transparent;
+}
+.sidebar-widget.search-widget input {
+    padding-left: 0px;
+    border-left: 0;
+}
+.sidebar-widget.search-widget input::-webkit-input-placeholder {
+    color: #70829a;
+}
+.sidebar-widget.search-widget input::-moz-placeholder {
+    color: #70829a;
+}
+.sidebar-widget.search-widget input:-moz-placeholder {
+    color: #70829a;
+}
+.sidebar-widget.search-widget input:-ms-input-placeholder {
+    color: #70829a;
+}
+body.sb-l-m .author-widget .media-body,
+body.sb-l-m .author-widget .media-heading {
+    display: none;
+}
+body.sb-l-m .author-widget .media-left img {
+    max-width: 30px;
+}
+@media (max-width: 900px) {
+    body.sb-l-m .author-widget {
+        padding: 8px 7px;
+    }
+}
+/*====================================================
+  E. Sidebar Minified State
+====================================================== */
+/* Sidebar Minified State */
+body.sb-l-m #sidebar_left {
+    z-index: 1028;
+    overflow: visible;
+    width: 60px;
+    height: 100%;
+    left: 0;
+    background-color: #30363e;
+}
+body.sb-l-m #sidebar_left:before {
+    width: 60px;
+}
+/* Hide Multiple Sidebar Elements */
+body.sb-l-m .sidebar-header,
+body.sb-l-m #sidebar_left .sidebar-title,
+body.sb-l-m #sidebar_left .sidebar-label,
+body.sb-l-m #sidebar_left .sidebar-title-tray,
+body.sb-l-m #sidebar_left .caret,
+body.sb-l-m #sidebar_left .sidebar-proj,
+body.sb-l-m #sidebar_left .sidebar-stat {
+    display: none;
+}
+/* Only Icon is showing - Modify Padding to fit */
+body.sb-l-m .sidebar-menu > li {
+    padding: 7px 0;
+}
+/* Menu will be converted to on:hover - It requires overflow */
+body.sb-l-m .sidebar-menu > li > a {
+    overflow: visible;
+}
+/* Sidebar-Menu Top Level - Icon */
+body.sb-l-m .sidebar-menu > li > a > span:nth-child(1) {
+    color: #ccc;
+    left: -1px;
+    width: 60px;
+    font-size: 18px;
+    padding-left: 0;
+}
+/* Sidebar-Menu Top Level - Title */
+body.sb-l-m .sidebar-menu > li > a > .sidebar-title {
+    position: absolute;
+    left: 60px;
+    top: -4px;
+    width: 180px;
+    height: 44px;
+    line-height: 44px;
+    font-size: 14px;
+    padding-left: 15px;
+    border-left: 1px solid #222;
+    background-color: transparent;
+}
+/* Menus have been converted to show only on:hover. Hide by default */
+body.sb-l-m .sidebar-menu > li > a.menu-open + ul {
+    display: none;
+}
+/* Menus have been converted. We display them on:hover */
+body.sb-l-m .sidebar-menu > li:hover > a + ul,
+body.sb-l-m .sidebar-menu > li:hover > a > .sidebar-title,
+body.sb-l-m .sidebar-menu > li:hover > ul .caret {
+    display: block !important;
+}
+/* Sidebar-Menu Sub Level */
+body.sb-l-m .sidebar-menu > li > ul {
+    position: absolute;
+    left: 60px;
+    top: 38px;
+    width: 180px;
+    height: auto;
+    border-left: 1px solid #222;
+    padding-bottom: 7px;
+    overflow: hidden;
+}
+/* Sidebar-Menu Multi Level */
+body.sb-l-m .sidebar-menu > li > ul > li {
+    overflow: hidden;
+}
+body.sb-l-m .sidebar-menu > li > ul > li ul {
+    width: 180px;
+}
+/* Sidebar-Menu Sub Level - Link Padding */
+body.sb-l-m .sidebar-menu li > ul > li > a {
+    padding: 8px 15px 8px 15px;
+}
+/* Sidebar-Menu Multi Level - Link Padding */
+body.sb-l-m .sidebar-menu li > ul > li > ul > li a {
+    padding: 8px 15px 8px 20px;
+}
+/* Adjust Primary Content Container - Sidebar Minified */
+body.sb-l-m #content_wrapper {
+    margin-left: 60px;
+}
+/* Primary Content Container - Sidebar Hidden */
+body.sb-l-c.sb-l-m #content_wrapper {
+    margin-left: 0;
+}
+/* Adjust Navbar Logo/Branding - Sidebar Minified */
+body.sb-l-m .navbar-branding {
+    width: 60px;
+}
+/* Adjust Navbar Logo/Branding - Sidebar Hidden */
+body.sb-l-m .navbar-brand {
+    display: none;
+}
+/*=======================================================
+  F. Sidebar Default Color Settings
+========================================================= */
+/* Sidebar Container */
+#sidebar_left {
+    background-color: #30363e;
+}
+/* Menu Item - Label Color */
+.sidebar-menu .sidebar-label {
+    color: #70829a;
+}
+/* Menu item Caret */
+.sidebar-menu li > a > span.caret {
+    color: #858483;
+}
+/* Open Menu item Caret */
+.sidebar-menu li > a.menu-open > span.caret {
+    color: #ffffff;
+}
+/* Top Level Menu Item - Text Color */
+.sidebar-menu > li > a {
+    color: #ffffff;
+}
+/* Top Level Menu Item - BG Color:hover */
+.sidebar-menu > li > a:hover,
+.sidebar-menu > li > a:focus,
+.sidebar-menu > li > a:active {
+    color: inherit;
+    background-color: transparent;
+}
+/* Top Level Item - Border Color:hover */
+.sidebar-menu > li:hover > a:after,
+.sidebar-menu > li:focus > a:after {
+    background: transparent;
+}
+/* Top Level Active Menu Item - BG/Text Color */
+.sidebar-menu > li.active > a {
+    color: #ffffff;
+    background-color: transparent;
+}
+/* Top Level Active Menu Item - Icon Color */
+.sidebar-menu > li.active > a > span:nth-child(1) {
+    color: #4a89dc;
+}
+/* Top Level Active Item - Border Color */
+.sidebar-menu > li.active > a:after,
+.sidebar-menu > li > a.menu-open:after {
+    background: transparent;
+}
+/* Sub-Menu Item - BG Color */
+.sidebar-menu > li > ul {
+    background-color: #282d33;
+}
+/* Sub-Menu Item - BG Color:hover */
+.sidebar-menu > li > ul > li > a {
+    color: #bbbbbb;
+}
+/* Sub-Menu Item - BG Color:hover */
+.sidebar-menu > li > ul > li > a:hover,
+.sidebar-menu > li > ul > li > a:focus {
+    color: inherit;
+    background-color: transparent;
+}
+/* Sub-Menu Item - Border Color:hover */
+.sidebar-menu > li > ul > li:hover > a:after,
+.sidebar-menu > li > ul > li:focus > a:after {
+    background: #4a89dc;
+}
+/* Sub-Menu Active Item - BG/Text Color */
+.sidebar-menu > li > ul > li.active > a {
+    color: #ffffff;
+    background-color: transparent;
+}
+/* Sub-Menu Active Item - Icon Color */
+.sidebar-menu > li > ul > li.active > a > span:nth-child(1),
+.sidebar-menu > li > ul > li > a.menu-open > span:nth-child(1) {
+    color: #4a89dc;
+}
+/* Sub-Menu Active Item - Border Color */
+.sidebar-menu > li > ul > li.active > a:after,
+.sidebar-menu > li > ul > li > a.menu-open:after {
+    background: #4a89dc;
+}
+/* Multi-Menu Item - BG Color */
+.sidebar-menu > li > ul > li ul {
+    background-color: #22262c;
+}
+/* Multi-level Item - BG Color:hover */
+.sidebar-menu > li > ul > li > ul > li > a {
+    color: #bbbbbb;
+}
+/* Multi-level Item - BG Color:hover */
+.sidebar-menu > li > ul > li > ul > li > a:hover,
+.sidebar-menu > li > ul > li > ul > li > a:focus {
+    color: inherit;
+    background-color: transparent;
+}
+/* Multi-level Active Item - Border Color:hover */
+.sidebar-menu > li > ul > li > ul > li:hover > a:after,
+.sidebar-menu > li > ul > li > ul > li:focus > a:after {
+    background: #967adc;
+}
+/* Multi-level Active Item - BG/Text Color */
+.sidebar-menu > li > ul > li > ul > li.active > a {
+    color: #ffffff;
+    background: transparent;
+}
+/* Multi-level Active Item - Icon Color */
+.sidebar-menu > li > ul > li > ul > li.active > a > span:nth-child(1),
+.sidebar-menu > li > ul > li > ul > li > a.menu-open > span:nth-child(1) {
+    color: #ffffff;
+}
+/* Multi-level Active Item - Border Color */
+.sidebar-menu > li > ul > li > ul > li.active > a:after {
+    background: #967adc;
+}
+/* Minified Sidebar - Title */
+body.sb-l-m .sidebar-menu > li > a > .sidebar-title {
+    background-color: #282d33;
+}
+/* Minified Sidebar - Active Icon */
+body.sb-l-m .sidebar-menu > li.active > a > span:nth-child(1) {
+    color: #4a89dc;
+}
+/*=======================================================
+  G. Sidebar Light Color Settings
+     Applied via class to "#sidebar"
+     eg: <aside id="sidebar_left" class="sidebar-light">
+========================================================= */
+#sidebar_left.sidebar-light {
+    color: #666;
+    background-color: #fafafa;
+    border-right: 1px solid #DDD;
+}
+#sidebar_left.sidebar-light .sidebar-menu .sidebar-label {
+    color: #AAA;
+    font-size: 11px;
+    font-weight: 500;
+}
+#sidebar_left.sidebar-light .sidebar-menu li > a > span.caret {
+    color: #BBB;
+}
+#sidebar_left.sidebar-light .sidebar-menu li > a.menu-open > span.caret {
+    color: #999;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li a {
+    color: #888;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > a:hover,
+#sidebar_left.sidebar-light .sidebar-menu > li > a:focus,
+#sidebar_left.sidebar-light .sidebar-menu > li > a:active {
+    background-color: transparent;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > a > span:nth-child(1) {
+    color: #888;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > a > span:nth-child(2) {
+    color: #555;
+    font-weight: 500;
+    letter-spacing: 0.4px;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li.active > a > span:nth-child(1) {
+    color: #4a89dc;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul {
+    background-color: #f2f2f2;
+    box-shadow: 0 1px 0 #e5e5e5 inset, 0 -1px 0 #e5e5e5 inset;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > a:hover,
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > a:focus {
+    background-color: transparent;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li.active > a > span:nth-child(1),
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > a.menu-open > span:nth-child(1) {
+    color: #4a89dc;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li ul {
+    background-color: #eaeaea;
+    box-shadow: 0 1px 0 #d9d9d9 inset, 0 -1px 0 #d9d9d9 inset;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > ul > li > a:hover,
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > ul > li > a:focus {
+    background-color: transparent;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > a.menu-open:after,
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > a.menu-open:after {
+    background: transparent;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > a.menu-open:after,
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > ul > li > a.menu-open:after {
+    background: #3bafda;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > ul > li.active > a:after,
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > ul > li:hover > a:after,
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li > ul > li:focus > a:after {
+    background: #967adc;
+}
+#sidebar_left.sidebar-light .sidebar-menu > li > ul > li.active > a > span.caret {
+    color: #AAA;
+}
+#sidebar_left.sidebar-light .sidebar-menu .sidebar-stat .progress {
+    background-color: #ddd;
+}
+#sidebar_left.sidebar-light .sidebar-toggle-mini a {
+    background-color: #f7f7f7;
+    border-color: #eaeaea;
+}
+#sidebar_left.sidebar-light.light {
+    background-color: #fff;
+}
+#sidebar_left.sidebar-light.light .sidebar-menu > li > ul {
+    background-color: #fbfbfb;
+}
+#sidebar_left.sidebar-light.light .sidebar-menu > li > ul > li ul {
+    background-color: #f5f5f5;
+}
+#sidebar_left.sidebar-light .sidebar-widget.author-widget .media-body {
+    color: #666;
+}
+#sidebar_left.sidebar-light .sidebar-widget.author-widget .media-links a {
+    color: #999;
+}
+#sidebar_left.sidebar-light .sidebar-widget.author-widget .media-links a:hover {
+    color: #555;
+}
+#sidebar_left.sidebar-light .sidebar-widget.author-widget.menu-widget-open .media-links a.sidebar-menu-toggle {
+    color: #555;
+}
+#sidebar_left.sidebar-light .sidebar-widget.menu-widget {
+    background-color: #f2f2f2;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+#sidebar_left.sidebar-light .sidebar-widget.menu-widget a span {
+    color: #777;
+}
+#sidebar_left.sidebar-light .sidebar-widget.search-widget {
+    background-color: #f2f2f2;
+    border-top: 1px solid #eaeaea;
+    border-bottom: 1px solid #eaeaea;
+}
+body.sb-l-m #sidebar_left.sidebar-light {
+    background-color: #FAFAFA;
+}
+body.sb-l-m #sidebar_left.sidebar-light.light {
+    background-color: #FFF;
+}
+body.sb-l-m #sidebar_left.sidebar-light .sidebar-menu > li > a > .sidebar-title,
+body.sb-l-m #sidebar_left.sidebar-light .sidebar-menu > li > ul {
+    border: 1px solid #DDD;
+    border-top: 0;
+    background-color: #f8f8f8;
+    left: 59px;
+    box-shadow: none;
+}
+body.sb-l-m #sidebar_left.sidebar-light .sidebar-menu > li > a > .sidebar-title {
+    border-top: 1px solid #DDD;
+}
+/*==================================================
+  H. Sidebar "Nano Scroller" Settings (Core Plugin)
+==================================================== */
+#sidebar_left.nano.affix {
+    padding-bottom: 0;
+}
+#sidebar_left.affix.nano .tooltip {
+    z-index: 9999 !important;
+}
+/* If the sidebar is minified we disable nanoscroll via css
+ * otherwise nano scroll hides popout menus and the scroll is
+ * needed to see submenus with many items */
+body.sb-l-m #sidebar_left.nano {
+    position: absolute;
+}
+body.sb-l-m #sidebar_left.nano > .nano-content {
+    overflow: visible;
+    right: 0 !important;
+}
+/* If the sidebar is minified and in mobile mode we hard disable
+ * the entire plugin via a display !important */
+body.sb-l-m.mobile-view .nano > .nano-pane {
+    display: none !important;
+}
+/*==========================================================
+  I. Sidebar Responsive Settings - Added via Update v1.2.
+     If window <900px create even smaller minified sidebar
+=========================================================== */
+@media (max-width: 900px) {
+    /* Sidebar Minified State */
+    body.sb-l-m #sidebar_left {
+        width: 45px;
+    }
+    body.sb-l-m #sidebar_left:before {
+        width: 45px;
+    }
+    /* Sidebar-menu Top Level - Icon */
+    body.sb-l-m .sidebar-menu > li > a > span:nth-child(1) {
+        left: -1px;
+        width: 45px;
+        font-size: 18px;
+    }
+    /* Sidebar-menu Top Level - Title */
+    body.sb-l-m .sidebar-menu > li > a > .sidebar-title {
+        position: absolute;
+        left: 45px;
+        top: -4px;
+        width: 180px;
+        height: 44px;
+        line-height: 44px;
+        font-size: 14px;
+        padding-left: 15px;
+        border-left: 1px solid #222;
+        background-color: #282d33;
+    }
+    /* Sidebar-menu Sub Level */
+    body.sb-l-m .sidebar-menu > li > ul {
+        position: absolute;
+        left: 45px;
+        top: 38px;
+        width: 180px;
+        height: auto;
+        border-left: 1px solid #222;
+        padding-bottom: 7px;
+        overflow: hidden;
+    }
+    /* Sidebar-menu Multi Level */
+    body.sb-l-m .sidebar-menu > li > ul > li ul {
+        width: 180px;
+    }
+    /* Sidebar-menu Sub Level - Link Padding */
+    body.sb-l-m .sidebar-menu li > ul > li > a {
+        padding: 8px 20px 8px 20px;
+    }
+    /* Sidebar-menu Multi Level - Link Padding */
+    body.sb-l-m .sidebar-menu li > ul > li > ul > li a {
+        padding: 8px 20px 8px 35px;
+    }
+    /* Adjust Primary Content Container - Sidebar Minified */
+    body.sb-l-m #content_wrapper {
+        margin-left: 45px;
+    }
+    /* Adjust Primary Content Container - Sidebar Hidden */
+    body.sb-l-c.sb-l-m #content_wrapper {
+        margin-left: 0;
+    }
+    /* Adjust Navbar Logo/Branding - Hide Logo */
+    body.sb-l-o .navbar-brand,
+    body.sb-l-m .navbar-brand {
+        display: none;
+    }
+    /* Adjust Navbar Logo/Branding - Adjust Width */
+    body.sb-l-o .navbar-branding,
+    body.sb-l-m .navbar-branding {
+        max-width: 45px;
+        margin-right: 5px;
+    }
+    /* Adjust Navbar Toggle - Sidebar Open */
+    body.sb-l-o .navbar #toggle_sidemenu_l {
+        transform: rotate(90deg);
+    }
+    /* Adjust Navbar Toggle - Sidebar Minified */
+    body.sb-l-o.sb-l-m .navbar #toggle_sidemenu_l {
+        transform: rotate(0deg);
+    }
+    /* Adjust Navbar Toggle - Sidebar Open + Minified */
+    body.sb-l-o .navbar #toggle_sidemenu_l,
+    body.sb-l-m .navbar #toggle_sidemenu_l {
+        width: 45px;
+    }
+    /* Hide sidebar user menu button when the sidebar is
+      collapsed. As it's not accessible in this mode*/
+    .sb-l-o .navbar .sidebar-menu-toggle,
+    .sb-l-c .navbar .sidebar-menu-toggle {
+        margin-left: 10px;
+        display: none;
+    }
+    #toggle_sidemenu_r {
+        margin-top: 4px;
+    }
+    body.sb-l-m #sidebar_left.sidebar-light .sidebar-menu > li > a > .sidebar-title,
+    body.sb-l-m #sidebar_left.sidebar-light .sidebar-menu > li > ul {
+        left: 44px;
+    }
+}
+/* ==============================================
+   Right Sidebar
+     A. Default Closed State
+     B. Sidebar Right Panel Menu
+     C. Nano Sidebar Scroller Settings
+=================================================
+  A. Default Closed State
+================================================= */
+#sidebar_right {
+    position: absolute;
+    top: 0;
+    width: 300px;
+    height: 100%;
+    padding-top: 60px;
+    right: -300px;
+    border-left: 1px solid #ddd;
+    background: #f8f8f8;
+}
+#sidebar_right.affix {
+    position: fixed;
+}
+#sidebar_right .sidebar-right-header {
+    width: 100%;
+    height: 59px;
+    padding: 4px 10px 4px 20px;
+}
+#sidebar_right .sidebar_right_content a:hover {
+    text-decoration: none;
+}
+/*===============================================
+   B. Sidebar Right Panel Menu
+================================================= */
+.title-divider {
+    border-bottom: 1px solid #e8e8e8;
+    padding: 0 5px 9px 5px;
+}
+#sidebar_right .panel {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+#sidebar_right .panel-heading {
+    height: 51px;
+    min-height: 51px;
+    overflow: hidden;
+}
+#sidebar_right .panel-tabs li a {
+    padding: 17px 18px;
+    border-right: 1px solid transparent;
+}
+#sidebar_right .panel-tabs li:first-child a {
+    border-left: 1px solid transparent;
+}
+/*===============================================
+  C. Nano Sidebar Scroller Settings
+================================================= */
+#sidebar_right.nano > .nano-pane {
+    background: rgba(0, 0, 0, 0.07);
+}
+#sidebar_right.nano > .nano-pane > .nano-slider {
+    background: #444;
+    background: #CCC;
+}
+/* ==============================================
+    Sidebar Actions
+     A. Sidebar Left Toggle
+     B. Sidebar Right Toggle
+     C. Left Sidebar Minified Helper
+     D. Mobile Menu Modifications
+=================================================
+  A. Sidebar Left Toggle
+================================================= */
+/*left sidebar open*/
+.sb-l-o #sidebar_left {
+    left: 0;
+    overflow: hidden;
+}
+.sb-l-o #content_wrapper {
+    margin-left: 230px;
+}
+/*left sidebar closed*/
+.sb-l-c #sidebar_left {
+    left: -230px;
+    overflow: hidden;
+}
+.sb-l-c #content_wrapper {
+    margin-left: 0;
+}
+/* Adjust navbar branding when closed */
+.sb-l-c .navbar-branding {
+    width: 60px;
+}
+.sb-l-c .navbar-brand {
+    display: none;
+}
+/*====================================================
+  B. Sidebar Right Toggle
+====================================================== */
+/*Sidebar Right Open */
+.sb-r-o #sidebar_right {
+    right: 0;
+}
+.sb-r-o #content_wrapper {
+    margin-right: 300px;
+}
+/*Sidebar Right Closed*/
+.sb-r-c #sidebar_right {
+    right: -300px;
+}
+.sb-r-c #content_wrapper {
+    margin-right: 0;
+}
+/*====================================================
+  C. Left Sidebar Minified Helper
+====================================================== */
+.sb-l-c.sb-l-m #sidebar_left {
+    left: -60px;
+}
+/*hide sidebar user menu button when the sidebar is
+collapsed. As it's not accessible in this mode*/
+.sb-l-m .navbar .sidebar-menu-toggle,
+.sb-l-c .navbar .sidebar-menu-toggle {
+    margin-left: 10px;
+    display: none;
+}
+/*===============================================
+  D. Mobile Menu Modifications
+================================================= */
+/* At less than 1100px we collapse any open sidebars via
+Media Queries. Theme Javscript will also add a a
+".mobile-view" class so that you can do any needed
+manipulation using an html class aswell */
+@media (max-width: 1100px) {
+    /* Sidebar Left Open/Default */
+    #content_wrapper,
+    .sb-l-o #content_wrapper {
+        margin-left: 0;
+        left: 230px;
+    }
+    /* Sidebar Left Minified */
+    .sb-l-m #content_wrapper {
+        left: 0;
+    }
+    /* Sidebar Left Closed */
+    .sb-l-c #content_wrapper {
+        margin-left: 0;
+        left: 0;
+    }
+    /* Sidebar Right Open */
+    .sb-r-o #content_wrapper {
+        margin-right: 0;
+        left: -300px;
+    }
+}

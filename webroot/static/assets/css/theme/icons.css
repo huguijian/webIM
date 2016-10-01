@@ -1,0 +1,111 @@
+/*
+==================================================
+1.  Favicon sprite
+2.  News Sprite - Demo purposes
+3.  Flag Icons
+==================================================
+*/
+/* Favicon sprite */
+.favicons {
+    background: url('../img/sprites/favicons.png') no-repeat;
+    width: 16px;
+    height: 16px;
+    vertical-align: middle;
+    display: inline-block;
+}
+.google {
+    background-position: 0 0;
+}
+.yahoo {
+    background-position: 0 -15px;
+}
+.bing {
+    background-position: 0 -30px;
+}
+.chrome {
+    background-position: 0 -45px;
+}
+.firefox {
+    background-position: 0 -61px;
+}
+.ie {
+    background-position: 0 -78px;
+}
+.safari {
+    background-position: 0 -96px;
+}
+/* News Sprite - Demo purposes */
+.news-sprite {
+    width: 25px;
+    height: 26px;
+    vertical-align: middle;
+    display: inline-block;
+    background: url("../img/sprites/news-logo_sprite.png") no-repeat;
+    background-position: 0 0;
+}
+.news-sprite.cnn {
+    background-position: 0 0;
+}
+.news-sprite.yahoo {
+    background-position: 0 -26px;
+}
+.news-sprite.google {
+    background-position: 0 -50px;
+}
+.news-sprite.fb {
+    background-position: 0 -75px;
+}
+/* Flag Icons */
+.flag-xs,
+.flag-sm,
+.flag,
+.flag-lg {
+    display: inline-block;
+    vertical-align: middle;
+}
+.flag-xs {
+    width: 16px;
+    height: 16px;
+    background: url('../img/sprites/flag-xs.png') no-repeat top left;
+}
+.flag-sm {
+    width: 32px;
+    height: 32px;
+    background: url('../img/sprites/flag-sm.png') no-repeat top left;
+}
+.flag-sm.flag-fr {
+    background-position: 0 0;
+}
+.flag-sm.flag-de {
+    background-position: 0 -33px;
+}
+.flag-sm.flag-in {
+    background-position: 0 -66px;
+}
+.flag-sm.flag-es {
+    background-position: 0 -99px;
+}
+.flag-sm.flag-tr {
+    background-position: 0 -132px;
+}
+.flag-sm.flag-us {
+    background-position: 0 -165px;
+}
+.flag-xs.flag-fr {
+    background-position: 0 -1px;
+}
+.flag-xs.flag-de {
+    background-position: 0 -18px;
+}
+.flag-xs.flag-es {
+    background-position: 0 -35px;
+}
+.flag-xs.flag-tr {
+    background-position: 0 -52px;
+}
+.flag-xs.flag-us {
+    background-position: 0 -69px;
+}
+.flag-xs.flag-in {
+    background-position: 0 -86px;
+}

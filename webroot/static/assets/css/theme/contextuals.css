@@ -1,0 +1,228 @@
+/*
+======================================================
+1.  Nav Pill Contextuals - Active Item
+2.  Tab Block Contextuals - Active Item Border
+======================================================
+*/
+/*====================================================
+  Nav Pill Contextuals - Active Item
+====================================================== */
+/* pills primary */
+.nav-pills.nav-primary > li.active > a,
+.nav-pills.nav-primary > li.active > a:hover,
+.nav-pills.nav-primary > li.active > a:focus {
+    background-color: #4a89dc;
+}
+/* pills success */
+.nav-pills.nav-success > li.active > a,
+.nav-pills.nav-success > li.active > a:hover,
+.nav-pills.nav-success > li.active > a:focus {
+    background-color: #70ca63;
+}
+/* pills info */
+.nav-pills.nav-info > li.active > a,
+.nav-pills.nav-info > li.active > a:hover,
+.nav-pills.nav-info > li.active > a:focus {
+    background-color: #3bafda;
+}
+/* pills warning */
+.nav-pills.nav-warning > li.active > a,
+.nav-pills.nav-warning > li.active > a:hover,
+.nav-pills.nav-warning > li.active > a:focus {
+    background-color: #f6bb42;
+}
+/* pills danger */
+.nav-pills.nav-danger > li.active > a,
+.nav-pills.nav-danger > li.active > a:hover,
+.nav-pills.nav-danger > li.active > a:focus {
+    background-color: #e9573f;
+}
+/* pills alert */
+.nav-pills.nav-alert > li.active > a,
+.nav-pills.nav-alert > li.active > a:hover,
+.nav-pills.nav-alert > li.active > a:focus {
+    background-color: #967adc;
+}
+/* pills system */
+.nav-pills.nav-system > li.active > a,
+.nav-pills.nav-system > li.active > a:hover,
+.nav-pills.nav-system > li.active > a:focus {
+    background-color: #37bc9b;
+}
+/* pills dark */
+.nav-pills.nav-dark > li.active > a,
+.nav-pills.nav-dark > li.active > a:hover,
+.nav-pills.nav-dark > li.active > a:focus {
+    background-color: #3b3f4f;
+}
+/*====================================================
+  Tab Block Contextuals - Active Item Border
+====================================================== */
+/* tabs primary */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-primary > li.active > a {
+    border-top-color: #4a89dc;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-primary > li.active > a {
+    border-left-color: #4a89dc;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-primary > li.active > a {
+    border-right-color: #4a89dc;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-primary > li.active > a {
+    border-bottom-color: #4a89dc;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-primary > li.active > a {
+    border-top-color: #4a89dc;
+}
+/* tabs success */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-success > li.active > a {
+    border-top-color: #70ca63;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-success > li.active > a {
+    border-left-color: #70ca63;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-success > li.active > a {
+    border-right-color: #70ca63;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-success > li.active > a {
+    border-bottom-color: #70ca63;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-success > li.active > a {
+    border-top-color: #70ca63;
+}
+/* tabs info */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-info > li.active > a {
+    border-top-color: #3bafda;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-info > li.active > a {
+    border-left-color: #3bafda;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-info > li.active > a {
+    border-right-color: #3bafda;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-info > li.active > a {
+    border-bottom-color: #3bafda;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-info > li.active > a {
+    border-top-color: #3bafda;
+}
+/* tabs warning */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-warning > li.active > a {
+    border-top-color: #f6bb42;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-warning > li.active > a {
+    border-left-color: #f6bb42;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-warning > li.active > a {
+    border-right-color: #f6bb42;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-warning > li.active > a {
+    border-bottom-color: #f6bb42;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-warning > li.active > a {
+    border-top-color: #f6bb42;
+}
+/* tabs danger */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-danger > li.active > a {
+    border-top-color: #e9573f;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-danger > li.active > a {
+    border-left-color: #e9573f;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-danger > li.active > a {
+    border-right-color: #e9573f;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-danger > li.active > a {
+    border-bottom-color: #e9573f;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-danger > li.active > a {
+    border-top-color: #e9573f;
+}
+/* tabs alert */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-alert > li.active > a {
+    border-top-color: #967adc;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-alert > li.active > a {
+    border-left-color: #967adc;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-alert > li.active > a {
+    border-right-color: #967adc;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-alert > li.active > a {
+    border-bottom-color: #967adc;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-alert > li.active > a {
+    border-top-color: #967adc;
+}
+/* tabs system */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-system > li.active > a {
+    border-top-color: #37bc9b;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-system > li.active > a {
+    border-left-color: #37bc9b;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-system > li.active > a {
+    border-right-color: #37bc9b;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-system > li.active > a {
+    border-bottom-color: #37bc9b;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-system > li.active > a {
+    border-top-color: #37bc9b;
+}
+/* tabs dark */
+/* tabs top */
+.tab-block .tabs-border.nav-tabs.tabs-dark > li.active > a {
+    border-top-color: #3b3f4f;
+}
+/* tabs left */
+.tab-block .tabs-border.tabs-left.tabs-dark > li.active > a {
+    border-left-color: #3b3f4f;
+}
+/* tabs right */
+.tab-block .tabs-border.tabs-right.tabs-dark > li.active > a {
+    border-right-color: #3b3f4f;
+}
+/* tabs bottom */
+.tab-block .tabs-border.tabs-below.tabs-dark > li.active > a {
+    border-bottom-color: #3b3f4f;
+}
+/* panel tabs */
+.panel-tabs.panel-tabs-border.tabs-dark > li.active > a {
+    border-top-color: #3b3f4f;
+}

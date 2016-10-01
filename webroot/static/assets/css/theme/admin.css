@@ -1,0 +1,1125 @@
+/*
+===============================================
+1.  AdminDock
+2.  AdminModals
+3.  AdminPanels
+
+=================================================
+*/
+
+/*===============================================
+  AdminDock
+================================================= */
+.dockmodal,
+.dockmodal *,
+.dockmodal *:before,
+.dockmodal *:after {
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.modal-placeholder {
+    display: none;
+    visibility: hidden;
+    height: 0;
+    width: 0;
+}
+.dockmodal-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1050;
+    background: #000;
+    opacity: 0.7;
+    display: none;
+}
+.dockmodal {
+    position: fixed;
+    right: 20px;
+    bottom: 0;
+    top: auto;
+    z-index: 1000;
+    height: 0;
+    background: transparent;
+    border-bottom: 0;
+    box-shadow: 0 1px 0px #000;
+    overflow: hidden;
+    border: 0;
+}
+.dockmodal-header {
+    height: 36px;
+    padding: 5px 5px 5px 10px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    background: #30363e;
+    overflow: hidden;
+    cursor: pointer;
+    z-index: 1;
+}
+.dockmodal-body {
+    background: #FFF;
+    position: absolute;
+    top: 36px;
+    bottom: 40px;
+    left: 0;
+    right: 0;
+    overflow: auto;
+    padding: 10px 15px;
+}
+.dockmodal-footer {
+    padding: 5px 10px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #CCC;
+    overflow: hidden;
+    text-align: right;
+}
+.dockmodal-footer-buttonset {
+    height: 30px;
+    line-height: 30px;
+}
+.dockmodal.no-footer .dockmodal-body {
+    bottom: 0;
+}
+.dockmodal-header .title-text {
+    color: #FFFFFF;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 26px;
+    vertical-align: top;
+    white-space: nowrap;
+    max-width: 100%;
+    margin-right: 90px;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.dockmodal-header .header-action {
+    padding: 5px;
+    float: right;
+    margin-right: 1px;
+    line-height: 16px;
+}
+.dockmodal-header .header-action:hover {
+    background: #555;
+}
+.dockmodal-header .header-action i {
+    background: url("../../../img/plugins/admindock-sprite.png") no-repeat top left;
+    vertical-align: top;
+    display: inline-block;
+    *display: inline;
+    zoom: 1;
+    width: 16px;
+    height: 16px;
+}
+.dockmodal-header .header-action .icon-dockmodal-close {
+    background-position: 0 0;
+}
+.dockmodal-header .header-action .icon-dockmodal-popin {
+    background-position: 0 -40px;
+}
+.dockmodal-header .header-action .icon-dockmodal-popout {
+    background-position: 0 -60px;
+}
+.dockmodal.popped-out .header-action .icon-dockmodal-popout {
+    background-position: 0 -40px;
+}
+.dockmodal-header .header-action .icon-dockmodal-minimize {
+    background-position: 0 -75px;
+}
+.dockmodal-header .header-action .icon-dockmodal-restore {
+    background-position: 0 -80px;
+}
+.dockmodal.minimized .header-action .icon-dockmodal-minimize {
+    background-position: 0 -25px;
+}
+.dockmodal.popped-out {
+    width: auto;
+    height: auto;
+    border: 0;
+    z-index: 1501;
+}
+.dockmodal.minimized {
+    height: 36px;
+    top: auto;
+    left: auto;
+    right: 20px;
+    bottom: 0;
+    z-index: 1000;
+}
+.dockmodal.minimized .dockmodal-header {
+    /*position: relative;*/
+}
+.dockmodal.minimized .dockmodal-body {
+    /*display: none;*/
+}
+.dockmodal.minimized .dockmodal-footer {
+    /*display: none;*/
+}
+.dockmodal .dockmodal-footer-buttonset > a {
+    min-width: 60px;
+}
+.dockmodal .dockmodal-footer-buttonset > a + a {
+    margin-left: 5px;
+}
+/* ==================================================
+    AdminModals
+ ==================================================== */
+/*
+Styles for the html/body for special modal where we want 3d effects
+Note that we need a container wrapping all content on the page for the
+perspective effects (not including the modals and the overlay).
+*/
+.md-perspective,
+.md-perspective body {
+    height: 100%;
+    overflow: hidden;
+}
+.md-perspective body {
+    background: #222;
+    -webkit-perspective: 600px;
+    perspective: 600px;
+}
+/* Modal styles */
+.md-modal {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    width: 50%;
+    max-width: 630px;
+    min-width: 320px;
+    height: auto;
+    z-index: 2000;
+    visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    -webkit-transform: translateX(-50%) translateY(-50%);
+    transform: translateX(-50%) translateY(-50%);
+}
+.md-show {
+    visibility: visible;
+}
+/* Overlay styles */
+.md-overlay {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    visibility: hidden;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    opacity: 0;
+    background: rgba(0, 0, 0, 0.8);
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.md-show ~ .md-overlay {
+    opacity: 1;
+    visibility: visible;
+}
+/* Content styles */
+.md-content {
+    color: #666;
+    background: #FFF;
+    position: relative;
+    border-radius: 3px;
+    margin: 0 auto;
+}
+.md-content h3 {
+    margin: 0;
+    padding: 15px;
+    text-align: center;
+    font-size: 2.4em;
+    font-weight: 300;
+    background: #eee;
+    border-radius: 3px 3px 0 0;
+    border-bottom: 1px solid #ddd;
+}
+.md-content > div {
+    padding: 15px 40px 30px;
+    margin: 0;
+    font-weight: 300;
+    font-size: 1.15em;
+}
+.md-content > div p {
+    margin: 0;
+    padding: 10px 0;
+}
+.md-content > div ul {
+    margin: 0;
+    padding: 0 0 30px 20px;
+}
+.md-content > div ul li {
+    padding: 5px 0;
+}
+/* ====== Container options ====== */
+/* modal close button */
+.admin-form .mfp-close,
+.admin-form .mfp-close-btn-in {
+    font-size: 26px;
+    color: #999;
+    text-shadow: none;
+    font-weight: 400;
+    padding-top: 5px;
+}
+/* ====== Default Fade effect ====== */
+.mfp-with-fade .mfp-content,
+.mfp-with-fade.mfp-bg {
+    opacity: 0;
+    -webkit-transition: opacity 0.5s ease-out;
+    transition: opacity 0.5s ease-out;
+}
+.mfp-with-fade.mfp-ready .mfp-content {
+    opacity: 1;
+}
+.mfp-with-fade.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-with-fade.mfp-removing .mfp-with-anim {
+    opacity: 0;
+}
+.mfp-with-fade.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Zoom effect ====== */
+.mfp-zoomIn {
+    /* start state */
+    /* animate in */
+    /* animate out */
+}
+.mfp-zoomIn .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s ease-in-out;
+    transform: scale(0.8);
+}
+.mfp-zoomIn.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.mfp-zoomIn.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: scale(1);
+}
+.mfp-zoomIn.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-zoomIn.mfp-removing .mfp-with-anim {
+    transform: scale(0.8);
+    opacity: 0;
+}
+.mfp-zoomIn.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Zoom-out effect ====== */
+.mfp-zoomOut .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform: scale(1.3);
+}
+.mfp-zoomOut.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s ease-out;
+}
+.mfp-zoomOut.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: scale(1);
+}
+.mfp-zoomOut.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-zoomOut.mfp-removing .mfp-with-anim {
+    transform: scale(1.3);
+    opacity: 0;
+}
+.mfp-zoomOut.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Move-from-left effect ====== */
+.mfp-slideLeft .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(-50px);
+}
+.mfp-slideLeft.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s;
+}
+.mfp-slideLeft.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: translateX(0);
+}
+.mfp-slideLeft.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-slideLeft.mfp-removing .mfp-with-anim {
+    transform: translateX(50px);
+    opacity: 0;
+}
+.mfp-slideLeft.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Move-from-right effect ====== */
+.mfp-slideRight .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s;
+    transform: translateX(50px);
+}
+.mfp-slideRight.mfp-bg {
+    opacity: 0;
+    transition: all 0.3s;
+}
+.mfp-slideRight.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: translateX(0);
+}
+.mfp-slideRight.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-slideRight.mfp-removing .mfp-with-anim {
+    transform: translateX(-50px);
+    opacity: 0;
+}
+.mfp-slideRight.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Move-from-top effect ====== */
+.mfp-slideDown .mfp-content {
+    vertical-align: middle;
+}
+.mfp-slideDown .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s;
+    transform: translateY(-100px);
+}
+.mfp-slideDown.mfp-bg {
+    opacity: 0;
+    transition: all 0.2s;
+}
+.mfp-slideDown.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mfp-slideDown.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-slideDown.mfp-removing .mfp-with-anim {
+    transform: translateY(-50px);
+    opacity: 0;
+}
+.mfp-slideDown.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Move-from-bottom effect ====== */
+.mfp-slideUp .mfp-content {
+    vertical-align: middle;
+}
+.mfp-slideUp .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.2s;
+    transform: translateY(100px);
+}
+.mfp-slideUp.mfp-bg {
+    opacity: 0;
+    transition: all 0.2s;
+}
+.mfp-slideUp.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: translateY(0);
+}
+.mfp-slideUp.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-slideUp.mfp-removing .mfp-with-anim {
+    transform: translateY(50px);
+    opacity: 0;
+}
+.mfp-slideUp.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== 3d unfold ====== */
+.mfp-flipInX .mfp-content {
+    perspective: 2000px;
+}
+.mfp-flipInX .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateX(-60deg);
+}
+.mfp-flipInX.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-flipInX.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: rotateX(0deg);
+}
+.mfp-flipInX.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-flipInX.mfp-removing .mfp-with-anim {
+    transform: rotateX(60deg);
+    opacity: 0;
+}
+.mfp-flipInX.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== FlipInY ====== */
+.mfp-flipInY .mfp-content {
+    perspective: 2000px;
+}
+.mfp-flipInY .mfp-with-anim {
+    opacity: 0;
+    transition: all 0.3s ease-in-out;
+    transform-style: preserve-3d;
+    transform: rotateY(-60deg);
+}
+.mfp-flipInY.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-flipInY.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: rotateY(0deg);
+}
+.mfp-flipInY.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-flipInY.mfp-removing .mfp-with-anim {
+    transform: rotateY(60deg);
+    opacity: 0;
+}
+.mfp-flipInY.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== rotate in left ====== */
+.mfp-rotateDown .mfp-content {
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+}
+.mfp-rotateDown .mfp-with-anim {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateY(-100%) rotateX(-90deg);
+    transform: translateY(-100%) rotateX(-90deg);
+    -webkit-transform-origin: 0 -100%;
+    transform-origin: 0 -100%;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.mfp-rotateDown.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-rotateDown.mfp-ready .mfp-with-anim {
+    -webkit-transform: translateY(0%) rotateX(0deg);
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+}
+.mfp-rotateDown.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-rotateDown.mfp-removing .mfp-with-anim {
+    -webkit-transform: translateY(-100%) rotateX(-90deg);
+    transform: translateY(-100%) rotateX(-90deg);
+    -webkit-transform-origin: 0 -100%;
+    transform-origin: 0 -100%;
+    opacity: 0;
+}
+.mfp-rotateDown.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== rotate in left ====== */
+.mfp-rotateUp .mfp-content {
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+}
+.mfp-rotateUp .mfp-with-anim {
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateY(100%) rotateX(90deg);
+    transform: translateY(100%) rotateX(90deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    opacity: 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.mfp-rotateUp.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-rotateUp.mfp-ready .mfp-with-anim {
+    -webkit-transform: translateY(0%) rotateX(0deg);
+    transform: translateY(0%) rotateX(0deg);
+    opacity: 1;
+}
+.mfp-rotateUp.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-rotateUp.mfp-removing .mfp-with-anim {
+    -webkit-transform: translateY(100%) rotateX(90deg);
+    transform: translateY(100%) rotateX(90deg);
+    -webkit-transform-origin: 0 100%;
+    transform-origin: 0 100%;
+    opacity: 0;
+}
+.mfp-rotateUp.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== rotate in left ====== */
+.mfp-rotateRight .mfp-content {
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+}
+.mfp-rotateRight .mfp-with-anim {
+    opacity: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateX(100%) rotateY(90deg);
+    transform: translateX(100%) rotateY(90deg);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.mfp-rotateRight.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-rotateRight.mfp-ready .mfp-with-anim {
+    -webkit-transform: translateX(0%) rotateY(0deg);
+    transform: translateX(0%) rotateY(0deg);
+    opacity: 1;
+}
+.mfp-rotateRight.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-rotateRight.mfp-removing .mfp-with-anim {
+    -webkit-transform: translateX(-100%) rotateY(-90deg);
+    transform: translateX(-100%) rotateY(-90deg);
+    -webkit-transform-origin: -100% 0;
+    transform-origin: -100% 0;
+    opacity: 0;
+}
+.mfp-rotateRight.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== rotate in left ====== */
+.mfp-rotateLeft .mfp-content {
+    -webkit-perspective: 1300px;
+    perspective: 1300px;
+}
+.mfp-rotateLeft .mfp-with-anim {
+    opacity: 0;
+    -webkit-transform-style: preserve-3d;
+    transform-style: preserve-3d;
+    -webkit-transform: translateX(-100%) rotateY(-90deg);
+    transform: translateX(-100%) rotateY(-90deg);
+    -webkit-transform-origin: -100% 0;
+    transform-origin: -100% 0;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
+}
+.mfp-rotateLeft.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-rotateLeft.mfp-ready .mfp-with-anim {
+    -webkit-transform: translateX(0%) rotateY(0deg);
+    transform: translateX(0%) rotateY(0deg);
+    opacity: 1;
+}
+.mfp-rotateLeft.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-rotateLeft.mfp-removing .mfp-with-anim {
+    -webkit-transform: translateX(100%) rotateY(90deg);
+    transform: translateX(100%) rotateY(90deg);
+    -webkit-transform-origin: 100% 0;
+    transform-origin: 100% 0;
+    opacity: 0;
+}
+.mfp-rotateLeft.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== fullscale ====== */
+.mfp-fullscale .mfp-with-anim {
+    -webkit-transform: scale(0.8);
+    transform: scale(0.8);
+    opacity: 0;
+    -webkit-transition: all 0.6s;
+    transition: all 0.6s;
+    -webkit-transition-delay: 0.3s;
+    transition-delay: 0.3s;
+}
+.mfp-fullscale.mfp-bg {
+    background: #000;
+    opacity: 0;
+    transition: all 0.35s;
+}
+.mfp-fullscale.mfp-ready .mfp-with-anim {
+    -webkit-transform: scale(1);
+    transform: scale(1);
+    opacity: 1;
+}
+.mfp-fullscale.mfp-ready.mfp-bg {
+    background: #000;
+    opacity: 1;
+}
+.mfp-fullscale.mfp-removing .mfp-with-anim {
+    opacity: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+.mfp-fullscale.mfp-removing.mfp-bg {
+    background: #000\A;
+    opacity: 0;
+    -webkit-transition: all 0.4s;
+    transition: all 0.4s;
+}
+/* ====== Sign ====== */
+.mfp-sign .mfp-content {
+    perspective: 1300px;
+}
+.mfp-sign .mfp-with-anim {
+    transform-style: preserve-3d;
+    transform: rotateX(-60deg);
+    transform-origin: 50% 0;
+    opacity: 0;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+.mfp-sign.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-sign.mfp-ready .mfp-with-anim {
+    transform: rotateX(0deg);
+    opacity: 1;
+}
+.mfp-sign.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-sign.mfp-removing .mfp-with-anim {
+    transform: rotateX(-60deg);
+    opacity: 0;
+}
+.mfp-sign.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+/* ====== Newspaper effect ====== */
+.mfp-newspaper .mfp-with-anim {
+    opacity: 0;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.5s;
+    transform: scale(0) rotate(500deg);
+}
+.mfp-newspaper.mfp-bg {
+    opacity: 0;
+    transition: all 0.5s;
+}
+.mfp-newspaper.mfp-ready .mfp-with-anim {
+    opacity: 1;
+    transform: scale(1) rotate(0deg);
+}
+.mfp-newspaper.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+.mfp-newspaper.mfp-removing .mfp-with-anim {
+    transform: scale(0) rotate(500deg);
+    opacity: 0;
+}
+.mfp-newspaper.mfp-removing.mfp-bg {
+    opacity: 0;
+}
+
+
+/*===============================================
+  AdminPanels
+================================================= */
+/* add to ".admin-panels" wrapper to have the content fadein
+ * after its contents are finished loading/rearranging */
+.admin-panels.fade-onload {
+    opacity: 0;
+}
+/* when preserve grid setting is true and invisible
+ * panel is left in an otherwise empty column. This is
+ * useful when you want to drag a panel to a column
+ * that would otherwise be empty */
+.preserve-grid {
+    padding: 10px;
+    background: transparent !important;
+    border: 0 !important;
+    margin: 0 !important;
+    outline: 0 !important;
+}
+.panel + .preserve-grid {
+    padding: 0;
+}
+body.ui-drag-active .preserve-grid {
+    visibility: hidden;
+    padding: 0;
+}
+/* placeholder */
+.ui-sortable-handle {
+    cursor: pointer;
+}
+.panel-placeholder {
+    border-radius: 3px;
+    margin-bottom: 20px;
+    padding: 0;
+    background-color: #eee;
+    border: 2px dashed #ccc;
+}
+.ui-sortable-helper.panel {
+    box-shadow: 2px 4px 6px 0 rgba(0, 0, 0, 0.1);
+}
+.panel-sortable .panel-heading {
+    cursor: move;
+}
+.sortable-grid {
+    min-height: 200px;
+}
+.sortable-grid.col-lg-12,
+.sortable-grid.col-md-12,
+.sortable-grid.col-sm-12,
+.sortable-grid.col-xs-12 {
+    min-height: 0;
+}
+/* title/color editboxes */
+.panel-colorbox,
+.panel-editbox {
+    position: relative;
+    display: none;
+    text-align: center;
+    background: #f1f1f1;
+    padding: 9px;
+    color: #AAA;
+    background-color: #f1f1f1;
+    border-left: 2px dashed #d9d9d9;
+    border-right: 2px dashed #d9d9d9;
+    border-bottom: 1px solid #ddd;
+}
+/* titlebox */
+.panel-editbox {
+    padding: 12px 16px;
+}
+.panel-editbox input {
+    height: 40px;
+    background-color: #fff;
+    border-radius: 2px;
+    text-align: center;
+    color: #AAA;
+    font-size: 16px;
+}
+.panel-editbox input:focus {
+    border-color: #DDD;
+    color: #666;
+}
+/* colorbox */
+.panel-colorbox {
+    padding: 12px 9px;
+}
+.panel-colorbox > span {
+    cursor: pointer;
+    display: inline-block;
+    width: 23px;
+    height: 23px;
+    margin: 4px 5px 0;
+    border: 2px solid rgba(0, 0, 0, 0.2);
+}
+.panel-colorbox > span:hover {
+    border-color: rgba(0, 0, 0, 0.4);
+}
+/* If titlebox or colorbox are present we need
+ * to remove duplicate panel borders. Check sibling
+ * elements and remove borders accordingly */
+.panel-heading + div + .panel-body,
+.panel-heading + div + .panel-menu,
+.panel-heading + div + div + .panel-body,
+.panel-heading + div + div + .panel-menu {
+    border-top: 0;
+}
+/* fullscreen */
+body.panel-fullscreen-active {
+    overflow: hidden;
+    position: fixed;
+}
+body.panel-fullscreen-active .navbar,
+body.panel-fullscreen-active #topbar,
+body.panel-fullscreen-active #sidebar_left,
+body.panel-fullscreen-active #sidebar_right {
+    z-index: -1;
+    display: none !important;
+}
+body.panel-fullscreen-active #content_wrapper {
+    position: relative;
+    z-index: 9999;
+}
+.panel-fullscreen {
+    display: block !important;
+    z-index: 9999 !important;
+    position: fixed !important;
+    width: 100% !important;
+    height: 100% !important;
+    top: 0 !important;
+    right: 0 !important;
+    left: 0 !important;
+    bottom: 0 !important;
+}
+/* hide remove and collapse icon during fullscreen */
+.panel-fullscreen .panel-controls > .panel-control-remove,
+.panel-fullscreen .panel-controls > .panel-control-collapse {
+    display: none !important;
+}
+/* collapsed */
+.panel-control-collapse:after {
+    content: "\f068";
+    /* fa-pencil */
+}
+.panel-collapsed .panel-control-collapse:after {
+    content: "\f067";
+    /* fa-pencil */
+}
+/* controls */
+.panel-controls {
+    float: right;
+    display: block;
+    cursor: pointer;
+}
+.panel-controls > a {
+    padding-top: 1px;
+    display: inline-block;
+    opacity: 0.7;
+    width: 30px;
+    color: #999;
+    font-size: 14px;
+    font-weight: normal;
+    text-align: center;
+}
+.panel-controls > a:hover {
+    text-decoration: none;
+    opacity: 1;
+}
+/* Icon colors for panel contextuals */
+.panel-primary .panel-controls > a,
+.panel-info .panel-controls > a,
+.panel-success .panel-controls > a,
+.panel-warning .panel-controls > a,
+.panel-danger .panel-controls > a,
+.panel-alert .panel-controls > a,
+.panel-system .panel-controls > a,
+.panel-dark .panel-controls > a {
+    color: #FFF;
+}
+/* control button icons */
+.panel-controls > a:after {
+    font-family: "FontAwesome";
+}
+/* title icon */
+.panel-control-title:after {
+    content: "\f040";
+    /* fa-pencil */
+}
+.panel-editbox-open .panel-control-title:after {
+    content: "\f0c7";
+    /* fa-save */
+}
+/* color icon */
+.panel-control-color:after {
+    content: "\f043";
+    /* fa-tint */
+}
+.panel-colorbox-open .panel-control-color:after {
+    content: "\f0c7";
+    /* fa-save */
+}
+/* collapsed icon */
+.panel-control-collapse:after {
+    content: "\f068";
+    /* fa-pencil */
+}
+.panel-collapsed .panel-control-collapse:after {
+    content: "\f067";
+    /* fa-pencil */
+}
+/* fullscreen icon */
+.panel-control-fullscreen:after {
+    content: "\f066";
+    /* fa-pencil */
+}
+/* remove icon */
+.panel-control-remove:after {
+    content: "\f00d";
+    /* fa-remove */
+}
+/* callback icon */
+.panel-control-callback:after {
+    content: "\f121";
+    /* fa-code */
+}
+/* expose icon */
+.panel-control-expose:after {
+    content: "\f06e";
+    /* fa-eye */
+}
+.panel-exposed .panel-control-expose:after {
+    content: "\f070";
+    /* fa-eye closed */
+}
+/* dockable icon */
+.panel-control-dockable:after {
+    content: "\f187";
+    /* fa-code */
+}
+/* loading icon */
+.panel-controls > a.panel-control-loader {
+    opacity: 1;
+    display: none;
+}
+.panel-loader-active .panel-controls > a.panel-control-loader {
+    display: inline-block !important;
+}
+.panel-control-loader:after {
+    content: "\f110";
+    /* fa-refresh */
+    -webkit-animation: fa-spin 2s infinite linear;
+    -moz-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+/* loading icon animation */
+.fa-spin {
+    -webkit-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+@-webkit-keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+@keyframes fa-spin {
+    0% {
+        -webkit-transform: rotate(0deg);
+        transform: rotate(0deg);
+    }
+    100% {
+        -webkit-transform: rotate(359deg);
+        transform: rotate(359deg);
+    }
+}
+.panel.mobile-controls .panel-heading > .panel-controls {
+    width: 28px;
+    height: 28px;
+    margin-top: 5px;
+    position: relative;
+    overflow: hidden;
+    background: #F4F4F4;
+    border-radius: 2px;
+    border: 1px solid #EEE;
+}
+.panel.mobile-controls .panel-heading > .panel-controls:hover,
+.panel.mobile-controls .panel-heading > .panel-controls.panel-controls-open {
+    background: #F0F0F0;
+    border-color: #E6E6E6;
+}
+.panel.mobile-controls .panel-heading > .panel-controls:after {
+    position: absolute;
+    content: "\f0c9";
+    font-family: "FontAwesome";
+    top: 0;
+    left: 7px;
+    line-height: 28px;
+    font-weight: 400;
+    font-size: 14px;
+    color: #AAA;
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+/* menu open states */
+.panel.mobile-controls .panel-heading > .panel-controls:hover,
+.panel.mobile-controls .panel-heading > .panel-controls.panel-controls-open {
+    background: #F0F0F0;
+    border-color: #E6E6E6;
+}
+.panel.mobile-controls .panel-heading > .panel-controls:hover:after,
+.panel.mobile-controls .panel-heading > .panel-controls.panel-controls-open:after {
+    color: #777;
+}
+.panel.mobile-controls .panel-controls a {
+    color: #999 !important;
+}
+.panel.mobile-controls .panel-heading > .panel-controls > a {
+    display: none;
+}
+.panel.mobile-controls .panel-heading .panel-controls a.panel-control-loader,
+.panel.mobile-controls .panel-heading .panel-controls a.panel-control-loader:after {
+    display: none !important;
+    opacity: 0 !important;
+    width: 0;
+    height: 0;
+}
+.panel.mobile-controls.panel-loader-active .panel-heading > .panel-controls:after {
+    display: block;
+    content: "\f110" !important;
+    -webkit-animation: fa-spin 2s infinite linear;
+    -moz-animation: fa-spin 2s infinite linear;
+    animation: fa-spin 2s infinite linear;
+}
+.panel.mobile-controls .popover-content:after {
+    display: none;
+}
+.panel.mobile-controls .panel-controls + .popover {
+    border: 1px solid #ddd;
+}
+.panel.mobile-controls .panel-controls + .popover > .arrow {
+    border-left-color: #ccc;
+}
+.panel.mobile-controls .panel-controls + .popover > .popover-content {
+    padding: 2px 5px;
+}
+.panel.mobile-controls .popover-content {
+    float: none;
+    margin: 0;
+    width: auto;
+    height: auto;
+    background: none;
+    border: 0;
+}
+.panel.mobile-controls .popover-content .panel-controls > a {
+    display: inline-block;
+}
+/* mobile control modifications during panel fullscreen mode */
+.panel.mobile-controls.panel-fullscreen .panel-heading > .panel-controls {
+    width: auto;
+    height: auto;
+    margin-top: 0;
+    position: relative;
+    overflow: hidden;
+    background: none;
+    border-radius: 0;
+    border: 0;
+}
+.panel.mobile-controls.panel-fullscreen .panel-heading > .panel-controls:after {
+    display: none !important;
+}
+.panel.mobile-controls.panel-fullscreen .panel-controls a {
+    color: inherit !important;
+}
+.panel.mobile-controls.panel-fullscreen .panel-heading > .panel-controls > a {
+    display: inline-block;
+}
+.panel.mobile-controls.panel-fullscreen .popover {
+    display: none !important;
+}

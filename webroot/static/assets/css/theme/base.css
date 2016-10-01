@@ -1,0 +1,803 @@
+/*
+========================================================
+1.  Fix the flawed CSS box model - Yes, IE6's box model is better
+2.  normalize.css v3.0.2 | git.io/normaliz
+3.  Utility Classes
+4.  Responsive: Utility classes
+5.  Boxed Layout
+========================================================
+*/
+/**
+ * Fix the flawed CSS box model - Yes, IE6's box model is better
+ * Browser support: IE8+
+ * via: http://paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+*, *:before, *:after {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+
+/*===============================================
+  normalize.css v3.0.2 | git.io/normaliz
+================================================= */
+/* Set <html> and <body> to inherit the height of the viewport */
+html, body {
+    min-height: 100%;
+    font-family: "Microsoft Yahei", "微软雅黑", Arial, Helvetica, sans-serif;
+}
+
+/**
+ * 1. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ *    https://developer.mozilla.org/en-US/docs/Web/CSS/text-size-adjust
+ */
+
+html {
+    -ms-text-size-adjust: 100%;
+    /* 1 */
+    -webkit-text-size-adjust: 100%;
+    /* 1 */
+}
+
+/**
+ * Remove default margin.
+ */
+
+body {
+    margin: 0;
+}
+
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11 and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ * hgroup has been removed from the HTML5 (W3C) specification
+ *        https://developer.mozilla.org/en-US/docs/Web/HTML/Element/hgroup
+ */
+
+article, aside, details, figcaption, figure, footer, header, hgroup, menu, main, nav, section, summary {
+    display: block;
+}
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+
+audio, canvas, progress, video {
+    display: inline-block;
+    /* 1 */
+    vertical-align: baseline;
+    /* 2 */
+}
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+
+audio:not([controls]) {
+    display: none;
+    height: 0;
+}
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+
+[hidden], template, script {
+    display: none;
+}
+
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+
+a {
+    background-color: transparent;
+}
+
+/**
+ * Address `outline` inconsistency between Chrome and other browsers.
+ */
+
+a:focus {
+    outline: thin dotted;
+}
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+
+a:active, a:hover {
+    outline: 0;
+}
+
+/**
+ * Remove text-decoration
+ */
+
+ins, a {
+    text-decoration: none;
+}
+
+/**
+ * Address styling not present in IE 8/9, Safari 5, and Chrome.
+ */
+
+abbr[title] {
+    border-bottom: 1px dotted;
+}
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari 5, and Chrome.
+ */
+
+b, strong {
+    font-weight: bold;
+}
+
+/**
+ * Improve readability of pre-formatted text in all browsers.
+ */
+
+pre {
+    white-space: pre-wrap;
+}
+
+/**
+ * Set consistent quote types.
+ */
+
+q {
+    quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+
+small {
+    font-size: 80%;
+}
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+
+sub, sup {
+    font-size: 75%;
+    line-height: 0;
+    position: relative;
+    vertical-align: baseline;
+}
+sup {
+    top: -0.5em;
+}
+sub {
+    bottom: -0.25em;
+}
+
+/**
+  * 1. Corrects max-width behavior (2.) if padding and border are used
+  * 2. Responsiveness: Sets a maxium width relative to the parent and auto scales the height
+  * 3. Remove the gap between images and the bottom of their containers
+  * 4. Remove border when inside `a` element in IE 8/9.
+  * remove 2. for Issue #502
+  */
+
+img {
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+    /* 1 */
+    vertical-align: middle;
+    /* 3 */
+    border: 0;
+    /* 4 */
+}
+
+/**
+ * Correct overflow displayed oddly in IE 9.
+ */
+
+svg:not(:root) {
+    overflow: hidden;
+}
+
+figure {
+    margin: 1em 40px;
+}
+
+hr {
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    height: 0;
+}
+
+pre {
+    overflow: auto;
+}
+
+code,
+kbd,
+pre,
+samp {
+    font-family: monospace, monospace;
+    font-size: 1em;
+}
+
+button,
+input,
+optgroup,
+select,
+textarea {
+    color: inherit;
+    font: inherit;
+    margin: 0;
+}
+
+button {
+    overflow: visible;
+}
+
+button,
+select {
+    text-transform: none;
+}
+
+button,
+html input[type="button"],
+input[type="reset"],
+input[type="submit"] {
+    -webkit-appearance: button;
+    cursor: pointer;
+}
+
+button[disabled],
+html input[disabled] {
+    cursor: default;
+}
+
+button::-moz-focus-inner,
+input::-moz-focus-inner {
+    border: 0;
+    padding: 0;
+}
+
+input {
+    line-height: normal;
+}
+
+input[type="checkbox"],
+input[type="radio"] {
+    box-sizing: border-box;
+    padding: 0;
+}
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    height: auto;
+}
+
+input[type="search"] {
+    -webkit-appearance: textfield;
+    -moz-box-sizing: content-box;
+    -webkit-box-sizing: content-box;
+    box-sizing: content-box;
+}
+
+input[type="search"]::-webkit-search-cancel-button,
+input[type="search"]::-webkit-search-decoration {
+    -webkit-appearance: none;
+}
+
+fieldset {
+    border: 1px solid #c0c0c0;
+    margin: 0 2px;
+    padding: 0.35em 0.625em 0.75em;
+}
+
+legend {
+    border: 0;
+    padding: 0;
+}
+
+textarea {
+    overflow: auto;
+}
+
+optgroup {
+    font-weight: bold;
+}
+
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+
+td,
+th {
+    padding: 0;
+}
+/*==================================================
+  Utility Classes
+==================================================== */
+.clearfix:before,
+.clearfix:after,
+.dl-horizontal dd:before,
+.dl-horizontal dd:after,
+.container:before,
+.container:after,
+.container-fluid:before,
+.container-fluid:after,
+.row:before,
+.row:after,
+.form-horizontal .form-group:before,
+.form-horizontal .form-group:after,
+.btn-toolbar:before,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:before,
+.btn-group-vertical > .btn-group:after,
+.nav:before,
+.nav:after,
+.navbar:before,
+.navbar:after,
+.navbar-header:before,
+.navbar-header:after,
+.navbar-collapse:before,
+.navbar-collapse:after,
+.pager:before,
+.pager:after,
+.panel-body:before,
+.panel-body:after,
+.modal-footer:before,
+.modal-footer:after,
+#topbar:before,
+#topbar:after {
+    content: " ";
+    display: table;
+}
+.clearfix:after,
+.dl-horizontal dd:after,
+.container:after,
+.container-fluid:after,
+.row:after,
+.form-horizontal .form-group:after,
+.btn-toolbar:after,
+.btn-group-vertical > .btn-group:after,
+.nav:after,
+.navbar:after,
+.navbar-header:after,
+.navbar-collapse:after,
+.pager:after,
+.panel-body:after,
+.modal-footer:after,
+#topbar:after {
+    clear: both;
+}
+.center-block {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.center-children > div {
+    float: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+.pull-right {
+    float: right !important;
+}
+.pull-left {
+    float: left !important;
+}
+.hide {
+    display: none !important;
+}
+.show {
+    display: block !important;
+}
+.invisible {
+    visibility: hidden;
+}
+.text-hide {
+    font: 0/0 a;
+    color: transparent;
+    text-shadow: none;
+    background-color: transparent;
+    border: 0;
+}
+.hidden {
+    display: none !important;
+    visibility: hidden !important;
+}
+.affix {
+    position: fixed;
+    -webkit-transform: translate3d(0, 0, 0);
+    transform: translate3d(0, 0, 0);
+}
+/*==================================================
+  Responsive: Utility classes
+==================================================== */
+@-ms-viewport {
+    width: device-width;
+}
+@media (max-width: 768px) {
+    h1 {
+        font-size: 25px;
+    }
+    h2 {
+        font-size: 20px;
+    }
+    h3 {
+        font-size: 16px;
+    }
+}
+.visible-xs,
+.visible-sm,
+.visible-md,
+.visible-lg,
+.visible-xl {
+    display: none !important;
+}
+.visible-xs-block,
+.visible-xs-inline,
+.visible-xs-inline-block,
+.visible-sm-block,
+.visible-sm-inline,
+.visible-sm-inline-block,
+.visible-md-block,
+.visible-md-inline,
+.visible-md-inline-block,
+.visible-lg-block,
+.visible-lg-inline,
+.visible-lg-inline-block,
+.visible-xl-block,
+.visible-xl-inline,
+.visible-xl-inline-block {
+    display: none !important;
+}
+@media (max-width: 767px) {
+    .visible-xs {
+        display: block !important;
+    }
+    table.visible-xs {
+        display: table;
+    }
+    tr.visible-xs {
+        display: table-row !important;
+    }
+    th.visible-xs,
+    td.visible-xs {
+        display: table-cell !important;
+    }
+}
+@media (max-width: 767px) {
+    .visible-xs-block {
+        display: block !important;
+    }
+}
+@media (max-width: 767px) {
+    .visible-xs-inline {
+        display: inline !important;
+    }
+}
+@media (max-width: 767px) {
+    .visible-xs-inline-block {
+        display: inline-block !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm {
+        display: block !important;
+    }
+    table.visible-sm {
+        display: table;
+    }
+    tr.visible-sm {
+        display: table-row !important;
+    }
+    th.visible-sm,
+    td.visible-sm {
+        display: table-cell !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm-block {
+        display: block !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm-inline {
+        display: inline !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .visible-sm-inline-block {
+        display: inline-block !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1139px) {
+    .visible-md {
+        display: block !important;
+    }
+    table.visible-md {
+        display: table;
+    }
+    tr.visible-md {
+        display: table-row !important;
+    }
+    th.visible-md,
+    td.visible-md {
+        display: table-cell !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1139px) {
+    .visible-md-block {
+        display: block !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1139px) {
+    .visible-md-inline {
+        display: inline !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1139px) {
+    .visible-md-inline-block {
+        display: inline-block !important;
+    }
+}
+@media (min-width: 1140px) {
+    .visible-lg {
+        display: block !important;
+    }
+    table.visible-lg {
+        display: table;
+    }
+    tr.visible-lg {
+        display: table-row !important;
+    }
+    th.visible-lg,
+    td.visible-lg {
+        display: table-cell !important;
+    }
+}
+@media (min-width: 1140px) {
+    .visible-lg-block {
+        display: block !important;
+    }
+}
+@media (min-width: 1140px) {
+    .visible-lg-inline {
+        display: inline !important;
+    }
+}
+@media (min-width: 1140px) {
+    .visible-lg-inline-block {
+        display: inline-block !important;
+    }
+}
+@media (min-width: 1400px) {
+    .visible-xl {
+        display: block !important;
+    }
+    table.visible-xl {
+        display: table;
+    }
+    tr.visible-xl {
+        display: table-row !important;
+    }
+    th.visible-xl,
+    td.visible-xl {
+        display: table-cell !important;
+    }
+}
+@media (min-width: 1400px) {
+    .visible-xl-block {
+        display: block !important;
+    }
+}
+@media (min-width: 1400px) {
+    .visible-xl-inline {
+        display: inline !important;
+    }
+}
+@media (min-width: 1400px) {
+    .visible-xl-inline-block {
+        display: inline-block !important;
+    }
+}
+@media (max-width: 767px) {
+    .hidden-xs {
+        display: none !important;
+    }
+}
+@media (min-width: 768px) and (max-width: 991px) {
+    .hidden-sm {
+        display: none !important;
+    }
+}
+@media (min-width: 992px) and (max-width: 1139px) {
+    .hidden-md {
+        display: none !important;
+    }
+}
+@media (min-width: 1140px) {
+    .hidden-lg {
+        display: none !important;
+    }
+}
+@media (min-width: 1400px) {
+    .hidden-xl {
+        display: none !important;
+    }
+}
+.visible-print {
+    display: none !important;
+}
+@media print {
+    .visible-print {
+        display: block !important;
+    }
+    table.visible-print {
+        display: table;
+    }
+    tr.visible-print {
+        display: table-row !important;
+    }
+    th.visible-print,
+    td.visible-print {
+        display: table-cell !important;
+    }
+}
+.visible-print-block {
+    display: none !important;
+}
+@media print {
+    .visible-print-block {
+        display: block !important;
+    }
+}
+.visible-print-inline {
+    display: none !important;
+}
+@media print {
+    .visible-print-inline {
+        display: inline !important;
+    }
+}
+.visible-print-inline-block {
+    display: none !important;
+}
+@media print {
+    .visible-print-inline-block {
+        display: inline-block !important;
+    }
+}
+@media print {
+    .hidden-print {
+        display: none !important;
+    }
+}
+
+/* ==============================================
+   Boxed Layout - Coming Soon
+=================================================
+  A. Boxed Settings
+================================================= */
+@media (min-width: 1140px) {
+    body.boxed-layout {
+        background-color: transparent !important;
+        background-image: url("../../../img/patterns/noise.png");
+        background-repeat: repeat;
+    }
+    body.boxed-layout .navbar {
+        width: 1140px !important;
+        margin: 0 auto;
+    }
+    body.boxed-layout .navbar-nav.navbar-right,
+    body.boxed-layout .navbar-nav.navbar-right:last-child {
+        margin-right: 0;
+    }
+    body.boxed-layout #main {
+        overflow: hidden;
+        width: 1140px !important;
+        margin: 0 auto;
+    }
+    body.boxed-layout #main:before {
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        background: #eee;
+        margin: 0 auto;
+        width: 1142px;
+        border-right: 1px solid #DDD;
+        border-left: 1px solid #DDD;
+    }
+    body.boxed-layout #main:after {
+        z-index: -1;
+        content: "";
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        background: #f8f8f8;
+    }
+    body.boxed-layout #content_wrapper {
+        margin-top: 0px;
+    }
+    body.boxed-layout .navbar.navbar-fixed-top + #main > #content_wrapper {
+        margin-top: 60px;
+    }
+    body.boxed-layout.sb-top #sidebar_left.affix {
+        width: 1140px;
+    }
+    body.boxed-layout #sidebar_left.affix {
+        left: auto;
+    }
+    body.boxed-layout #sidebar_left.nano > .nano-content {
+        padding-top: 0;
+    }
+    body.boxed-layout.sb-l-c #sidebar_left,
+    body.boxed-layout.sb-l-c.sb-l-m #sidebar_left {
+        left: -230px;
+    }
+    body.boxed-layout #sidebar_right {
+        display: none;
+        position: absolute;
+        top: 0;
+        right: 0;
+    }
+    body.boxed-layout.sb-r-o #sidebar_right {
+        display: block;
+    }
+    body.boxed-layout #topbar.affix {
+        width: 910px !important;
+        margin-left: 0;
+        left: auto;
+        right: auto;
+    }
+    body.boxed-layout.sb-r-o #topbar.affix {
+        width: 780px !important;
+    }
+    body.boxed-layout.sb-l-m #topbar.affix {
+        width: 1080px !important;
+    }
+    body.boxed-layout.sb-l-c #topbar.affix {
+        width: 1140px !important;
+    }
+    body.boxed-layout.sb-l-m.sb-r-o #topbar.affix {
+        width: 780px !important;
+    }
+    body.boxed-layout.sb-l-c.sb-r-o #topbar.affix {
+        width: 840px !important;
+    }
+    body.boxed-layout #topbar-dropmenu {
+        top: 0;
+    }
+    body.boxed-layout .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper > #topbar-dropmenu {
+        top: 1px;
+    }
+    body.boxed-layout.sb-top .navbar.navbar-fixed-top + #sidebar_left + #content_wrapper > #topbar-dropmenu {
+        top: 0;
+    }
+}
+@media (max-width: 1140px) {
+    body.boxed-layout .navbar.navbar-fixed-top + #main {
+        margin-top: 60px;
+    }
+    body.boxed-layout.sb-l-o .navbar + #main > #sidebar_left.nano > .nano-content {
+        padding-top: 60px;
+    }
+    body.boxed-layout.sb-l-m .navbar + #main > #sidebar_left.nano > .nano-content {
+        padding-top: 0;
+    }
+}

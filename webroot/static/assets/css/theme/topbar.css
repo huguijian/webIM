@@ -1,0 +1,225 @@
+/* ==============================================
+   Topbar
+     A. Topbar
+     B. Topbar Dropdown Menu
+     C. Topbar Alternate Style
+     D. Topbar Navigation - List
+     E. Topbar Responsive Settings
+=================================================
+  A. Topbar
+================================================= */
+#topbar {
+    z-index: 2;
+    position: relative;
+    width: 100%;
+    min-height: 51px;
+    padding: 10px 21px;
+    background: #fafafa;
+    border-bottom: 1px solid #e0e0e0;
+}
+#topbar .topbar-right {
+    float: right;
+}
+/* Topbar Breadcrumbs */
+.breadcrumb {
+    float: left;
+    position: relative;
+    padding: 1px 25px 0 0;
+    margin-bottom: 0;
+    font-size: 12px;
+    border-radius: 0;
+    background-color: transparent;
+}
+.breadcrumb > li {
+    color: #888;
+}
+.breadcrumb > li.crumb-active > a {
+    color: #555;
+    font-size: 18px;
+}
+/*Toggle sidemenu button*/
+#toggle_sidemenu_r i.fa,
+#toggle_sidemenu_r span.glyphicon,
+#toggle_sidemenu_r span.glyphicons {
+    margin-top: 2px;
+}
+/* toggle sidemenu button (when menu is open) */
+body.sb-r-o #toggle_sidemenu_r i.fa,
+body.sb-r-o #toggle_sidemenu_r span.glyphicon,
+body.sb-r-o #toggle_sidemenu_r span.glyphicons {
+    -webkit-transform: scale(-1, 1);
+    transform: scale(-1, 1);
+    color: #999;
+}
+/* Toggle Right Sidebar - Badge */
+.badge.badge-hero {
+    position: relative;
+    top: -12px;
+    margin-left: -10px;
+    padding: 2px 5px;
+    font-size: 11px;
+}
+/*===============================================
+   B. Topbar - Alternate Style
+      Requires ".alt" class on #topbar
+================================================= */
+#topbar.alt {
+    min-height: 70px;
+    padding: 20px 22px;
+    background: #e7e7e7;
+    border-bottom: 1px solid #ddd;
+}
+#topbar.alt .breadcrumb {
+    font-size: 14px;
+}
+/*===============================================
+   C. Topbar Dropmenu
+================================================= */
+#topbar-dropmenu {
+    z-index: 9999;
+    overflow: hidden;
+    display: none;
+    position: relative;
+    top: 1px;
+    padding: 17px 20px 10px;
+    height: auto;
+    width: 100%;
+    background: url("../../../img/patterns/topbar-bg.jpg") repeat -60px top;
+    -webkit-box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) inset;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.4) inset;
+}
+#topbar-dropmenu:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.4);
+}
+.navbar[class*='bg-'] + #sidebar_left + #content_wrapper > #topbar-dropmenu {
+    top: 0;
+}
+.topbar-menu .metro-tile {
+    opacity: 0;
+    display: block;
+    color: #FFF;
+    height: 95px;
+    position: relative;
+    padding: 15px 5px 0;
+    margin-bottom: 8px;
+    border-radius: 4px;
+    text-align: center;
+    background: rgba(255, 255, 255, 0.25);
+    -webkit-transition: background 0.2s ease;
+    transition: background 0.2s ease;
+}
+.topbar-menu .metro-tile:hover,
+.topbar-menu .metro-tile:focus,
+.topbar-menu .metro-tile:active {
+    color: #fff;
+    background: rgba(255, 255, 255, 0.4);
+}
+.topbar-menu .metro-tile span:first-child {
+    font-size: 44px;
+}
+.topbar-menu .metro-tile .metro-title {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    font-size: 11px;
+    font-weight: 600;
+}
+/* Topbar Menu Modal */
+.metro-modal {
+    z-index: 9998;
+    cursor: pointer;
+    position: fixed;
+    display: none;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.6);
+}
+/* if topbar is fixed we force it relative upon topbar
+ * dropmenu open as it will create scrolling problems */
+#topbar-dropmenu.topbar-menu-open + #topbar.affix {
+    position: relative !important;
+    margin-left: auto !important;
+}
+/*===============================================
+   D. Topbar Dropdown Menu - Alternate Style
+      Requires ".alt" class on #topbar-dropmenu
+      and bg classes on all ".metro-tiles"
+================================================= */
+#topbar-dropmenu.alt {
+    z-index: 1025;
+    padding: 17px 20px 10px;
+    background: #DDD;
+    border-bottom: 1px solid #ccc;
+    box-shadow: none;
+}
+#topbar-dropmenu.alt:before {
+    display: none;
+}
+#topbar-dropmenu.alt .topbar-menu > div {
+    opacity: 0.85;
+}
+#topbar-dropmenu.alt .topbar-menu .metro-tile {
+    opacity: 1;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+}
+#topbar-dropmenu.alt .topbar-menu .metro-tile:hover,
+#topbar-dropmenu.alt .topbar-menu .metro-tile:focus,
+#topbar-dropmenu.alt .topbar-menu .metro-tile:active {
+    color: #fff;
+    background: inherit;
+}
+#topbar-dropmenu.alt .topbar-menu .metro-tile .metro-title {
+    bottom: 7px;
+    font-size: 12px;
+}
+/*===============================================
+   D. Topbar List Navigation
+================================================= */
+#topbar .nav.nav-list-topbar {
+    margin: -10px 15px;
+}
+#topbar .nav.nav-list-topbar li a {
+    padding: 16px 14px 12px;
+}
+#topbar .nav.nav-list-topbar li.active a {
+    border-bottom: 3px solid #4a89dc;
+}
+/*===============================================
+   E. Topbar Settings - Responsive
+================================================= */
+@media (max-width: 815px) {
+    #topbar {
+        padding: 10px 6px 10px 14px;
+    }
+    #topbar.alt {
+        min-height: 40px;
+        padding: 10px 6px 10px 14px;
+    }
+    #topbar .topbar-dropdown {
+        display: none !important;
+    }
+    #topbar.affix.alt + #content {
+        margin-top: 40px;
+    }
+}
+@media (max-width: 700px) {
+    #topbar .breadcrumb {
+        font-size: 14px;
+        padding-top: 5px;
+        padding-left: 2px;
+    }
+    #topbar .breadcrumb .crumb-active {
+        display: none;
+    }
+    #topbar .breadcrumb > li.crumb-active + li:before {
+        display: none;
+    }
+}

@@ -1,0 +1,392 @@
+/*==================================================
+  FullCalendar.JS -  Used on pages-calendar.html
+==================================================== */
+/* External Events
+------------------------------*/
+.fc-event {
+    position: relative;
+    cursor: pointer;
+    padding: 8px;
+    margin: 10px;
+    color: #777;
+    font-size: 12px;
+    background: #f9f9f9;
+    border-radius: 2px;
+    border: 1px solid #ddd;
+    border-left: 4px solid #ddd;
+}
+.fc-event-desc {
+    display: inline-block;
+    vertical-align: middle;
+    padding-left: 5px;
+}
+.fc-event-icon {
+    display: inline-block;
+    vertical-align: middle;
+    width: 20px;
+    font-size: 16px;
+    text-align: center;
+}
+.fc-event:hover,
+.fc-event:focus {
+    color: #777;
+    background: #f4f4f4;
+}
+.fc-view-container .fc-event {
+    padding: 6px;
+    background: #f4f4f4;
+}
+.fc-view-container .fc-event .fc-content {
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+.fc-event-primary {
+    border-left-color: #4a89dc;
+}
+.fc-event-primary .fc-event-icon {
+    color: #4a89dc;
+}
+.fc-event-info {
+    border-left-color: #3bafda;
+}
+.fc-event-info .fc-event-icon {
+    color: #3bafda;
+}
+.fc-event-success {
+    border-left-color: #70ca63;
+}
+.fc-event-success .fc-event-icon {
+    color: #70ca63;
+}
+.fc-event-warning {
+    border-left-color: #f6bb42;
+}
+.fc-event-warning .fc-event-icon {
+    color: #f6bb42;
+}
+.fc-event-danger {
+    border-left-color: #e9573f;
+}
+.fc-event-danger .fc-event-icon {
+    color: #e9573f;
+}
+.fc-event-alert {
+    border-left-color: #967adc;
+}
+.fc-event-alert .fc-event-icon {
+    color: #967adc;
+}
+.fc-event-system {
+    border-left-color: #37bc9b;
+}
+.fc-event-system .fc-event-icon {
+    color: #37bc9b;
+}
+/* Buttons (styled <button> tags, normalized to work cross-browser)
+--------------------------------------------------------------------------------------------------*/
+.fc button {
+    /* dimensions */
+    display: inline-block;
+    margin-bottom: 0;
+    font-weight: normal;
+    text-align: center;
+    vertical-align: middle;
+    cursor: pointer;
+    background-image: none;
+    border: 1px solid transparent;
+    border-color: rgba(0, 0, 0, 0);
+    white-space: nowrap;
+    padding: 9px 12px;
+    font-size: 13px;
+    line-height: 1.49;
+    border-radius: 0px;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    color: #666666;
+    background-color: #f0f0f0;
+    border-color: rgba(0, 0, 0, 0.1);
+    height: auto;
+    padding: 6px 12px;
+}
+.fc button:focus,
+.fc button:active:focus,
+.fc button.active:focus {
+    outline: 0;
+    outline-offset: -2px;
+}
+.fc button:hover,
+.fc button:focus {
+    color: #666666;
+    text-decoration: none;
+}
+.fc button:active,
+.fc button.active {
+    outline: 0;
+    background-image: none;
+    -webkit-box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+    box-shadow: inset 0 3px 5px rgba(0, 0, 0, 0.125);
+}
+.fc button.disabled,
+.fc button[disabled],
+fieldset[disabled] .fc button {
+    cursor: not-allowed;
+    pointer-events: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+}
+.fc button.btn-gradient {
+    text-shadow: 0 -1px 0 rgba(0, 0, 0, 0.4);
+    border-color: rgba(0, 0, 0, 0.07) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.18);
+    -webkit-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2);
+    background-repeat: repeat-x;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.15) 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.3) 1%, rgba(255, 255, 255, 0.15) 100%);
+}
+.fc button.btn-rounded {
+    border-radius: 20px;
+}
+.fc button:hover,
+.fc button:focus,
+.fc button:active,
+.fc button.active,
+.open > .dropdown-toggle.fc button {
+    color: #666666;
+    background-color: #eaeaea;
+}
+.fc button:active,
+.fc button.active,
+.open > .dropdown-toggle.fc button {
+    background-image: none;
+}
+.fc button.disabled,
+.fc button[disabled],
+fieldset[disabled] .fc button,
+.fc button.disabled:hover,
+.fc button[disabled]:hover,
+fieldset[disabled] .fc button:hover,
+.fc button.disabled:focus,
+.fc button[disabled]:focus,
+fieldset[disabled] .fc button:focus,
+.fc button.disabled:active,
+.fc button[disabled]:active,
+fieldset[disabled] .fc button:active,
+.fc button.disabled.active,
+.fc button[disabled].active,
+fieldset[disabled] .fc button.active {
+    background-color: #f0f0f0;
+    border-color: #dddddd;
+}
+.fc button .badge {
+    color: #f0f0f0;
+    background-color: #666666;
+}
+.fc button.btn-gradient {
+    text-shadow: 0 -1px 0 rgba(255, 255, 255, 0.4);
+    border-color: rgba(0, 0, 0, 0.07) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.09);
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.3) 100%);
+    filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#80ffffff', endColorstr='#00ffffff', GradientType=0);
+}
+.fc button.light {
+    background-color: #FAFAFA;
+}
+.fc button.light:hover,
+.fc button.light:focus,
+.fc button.light:active,
+.fc button.light.active,
+.open > .dropdown-toggle.fc button.light {
+    background-color: #ececec;
+}
+.fc button.dark {
+    background-color: #e8e8e8;
+}
+.fc button.dark:hover,
+.fc button.dark:focus,
+.fc button.dark:active,
+.fc button.dark.active,
+.open > .dropdown-toggle.fc button.dark {
+    background-color: #e1e1e1;
+}
+.fc-state-default {
+    border: 1px solid;
+}
+.fc-state-default.fc-corner-left {
+    border-top-left-radius: 1px;
+    border-bottom-left-radius: 1px;
+}
+.fc-state-default.fc-corner-right {
+    border-top-right-radius: 1px;
+    border-bottom-right-radius: 1px;
+}
+/* icons in buttons */
+.fc button .fc-icon {
+    position: relative;
+    margin: 0 .1em;
+}
+/*  button states
+*/
+.fc-state-default {
+    background-color: #f5f5f5;
+    background-image: none;
+    border-color: #e6e6e6 #e6e6e6 #bfbfbf;
+    border-color: rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.1) rgba(0, 0, 0, 0.25);
+    color: #333;
+    text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+    box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.2), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.fc-state-hover,
+.fc-state-down,
+.fc-state-active,
+.fc-state-disabled {
+    color: #333333;
+    background-color: #e6e6e6;
+}
+.fc-state-hover {
+    color: #333333;
+    text-decoration: none;
+}
+.fc-state-down,
+.fc-state-active {
+    background-color: #cccccc;
+    background-image: none;
+    box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.07), 0 1px 2px rgba(0, 0, 0, 0.05);
+}
+.fc-state-disabled {
+    cursor: default;
+    background-image: none;
+    opacity: 0.65;
+    filter: alpha(opacity=65);
+    box-shadow: none;
+}
+.fc-toolbar .fc-state-active,
+.fc-toolbar .ui-state-active {
+    z-index: 1;
+}
+/* Buttons Groups
+--------------------------------------------------------------------------------------------------*/
+.fc-button-group {
+    display: inline-block;
+}
+/*
+every button that is not first in a button group should scootch over one pixel and cover the
+previous button's border...
+*/
+.fc .fc-button-group > * {
+    /* extra precedence b/c buttons have margin set to zero */
+    float: left;
+    margin: 0 0 0 -1px;
+}
+.fc .fc-button-group > :first-child {
+    /* same */
+    margin-left: 0;
+}
+/* Background
+--------------------------------------------------------------------------------------------------*/
+.fc-bg {
+    background-color: #fefefe;
+}
+.fc-bg .fc-today {
+    background-color: #FFFEF8;
+}
+.fc-bg .fc-other-month {
+    background-color: #f8f8f8;
+}
+/* Text
+--------------------------------------------------------------------------------------------------*/
+.fc-basic-view td.fc-day-number {
+    color: #777;
+    padding-top: 3px;
+    padding-right: 7px;
+    font-size: 12px;
+}
+.fc-basic-view td.fc-today.fc-day-number {
+    color: #444;
+    font-weight: 600;
+}
+/* Minimal Style. Requires '.minimal-mp' parent class - Used on Calendar Page
+--------------------------------------------------------------------------------------------------*/
+.minimal-mp .ui-datepicker {
+    background: none;
+    margin: 0;
+    border: 0;
+}
+.minimal-mp .ui-datepicker-header {
+    display: none;
+}
+.minimal-mp .ui-datepicker td {
+    padding: 8px 5px;
+}
+.minimal-mp .ui-datepicker td span,
+.minimal-mp .ui-datepicker td a {
+    background: #DDD;
+    padding: .50em .20em;
+}
+/*===============================================
+  Gmap
+================================================= */
+/* Default map height/width */
+.map {
+    width: 100%;
+    height: 400px;
+}
+/* Inline Map Pagination Styles */
+.map .pagination {
+    text-shadow: 0 1px #ffffff;
+    border-color: #dddddd rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.18);
+    background-color: #fdfdfd;
+    width: 92%;
+    margin: 11px;
+    -webkit-box-shadow: 0 2px 4px #AAA;
+    box-shadow: 0 2px 4px #AAA;
+}
+.map .pagination .display {
+    display: inline-block;
+    width: 84%;
+    height: 40px;
+    border-right: 1px solid #fff;
+    border-left: 1px solid #fff;
+    text-align: center;
+    line-height: 40px;
+    text-shadow: 0 1px #FFF;
+}
+.map .pagination .btn {
+    width: 8%;
+    height: 40px;
+    cursor: pointer;
+    border-radius: 0;
+    vertical-align: top;
+    border: 0;
+}
+.map .pagination .back-btn {
+    float: left;
+    border-right: 1px solid #ddd;
+    background: url("../img/plugins/arrow_left_12x12.png") no-repeat 50% 50%;
+}
+.map .pagination .fwd-btn {
+    float: right;
+    border-left: 1px solid #ddd;
+    background: url("../img/plugins/arrow_right_12x12.png") no-repeat 50% 50%;
+}
+.map .checker {
+    margin-right: 8px;
+}
+/* Map Styling Helper Classes */
+.map-shadow {
+    -webkit-box-shadow: 0 2px 3px #999;
+    box-shadow: 0 2px 3px #999;
+}
+.map-gradient {
+    text-shadow: 0 1px #ffffff;
+    border-color: #cccccc rgba(0, 0, 0, 0.19) rgba(0, 0, 0, 0.18);
+    background-color: #f0f0f0;
+    background-image: -webkit-linear-gradient(top, rgba(255, 255, 255, 0.9) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background-image: linear-gradient(to bottom, rgba(255, 255, 255, 0.9) 10%, rgba(255, 255, 255, 0.1) 100%);
+}
+.map-rounded {
+    border-radius: 4px;
+}

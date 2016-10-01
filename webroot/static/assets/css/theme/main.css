@@ -1,0 +1,8 @@
+body{
+    font-size:12px;
+    line-height:1.2;
+}
+.admin-sidebar{
+    font-size:1.2em;
+    overflow-y: auto;
+}

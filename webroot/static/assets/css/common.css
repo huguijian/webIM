@@ -1,0 +1,71 @@
+body{
+    font-size:1.4rem;
+}
+.admin-sidebar{
+    width:220px;
+}
+.admin-sidebar-list li.xx-active{
+    border-right:5px solid #0E90D2 !important;
+}
+.admin-sidebar{
+    font-size:15px;
+}
+.admin-content, .admin-sidebar{
+    overflow-y: auto;
+}
+.xx-menu-item{
+    font-size:1.1em;
+    margin-right:10px;
+}
+.admin-task-bd{
+    line-height:1.6;
+    color:#9f9f9f;
+    padding-top:10px;
+    padding-left:5px;
+}
+ul.xx-margin-big li+li{
+    margin-right:5px;
+    margin-left:5px;
+}
+ul.xx-margin-bottom-big li{
+    margin-bottom:1.2em;
+}
+ul.xx-dropdown-divider li{
+    margin-top:0;
+    margin-bottom:0;
+}
+ul.xx-dropdown-divider li+li{
+    border-top:1px dotted #999;
+}
+.xx-gallery-title{
+    margin-bottom:5px !important;
+    padding-bottom:2px !important;
+    border-bottom:1px solid #ddd;
+    font-weight:bold !important;
+}
+.xx-small{
+    font-size:0.7em !important;
+}
+.xx-table-main{
+    font-size:12px;
+    border-bottom:1px solid #DDDDDD;
+}
+.xx-pl-10{
+    padding-left:10px;
+}
+.xx-ft-center{
+    text-align:center;
+}
+.xx-mr-select{
+    margin-right:10px;
+}
+.xx-question-all{
+    display:none;
+    font-size:12px !important;
+    font-family:Arial,'Microsoft Yahei' !important;
+    padding:20px;
+}
+.xx-q-border{
+    border-top:1px dashed #ddd;
+    padding:10px 15px;
+}

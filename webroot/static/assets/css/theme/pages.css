@@ -1,0 +1,1103 @@
+/*
+================================================
+1.  Page Footer
+2.  Pages
+      A. UI Animations Page
+      B. FAQ Page
+      C. Gallery.html
+      D. Calendar.html
+      E. Message Pages
+      F. Editors.html
+      G. External Pages - login, register, screenlock, coming-soon, forgotpw
+      H. Invoice.html
+      I. Timeline.html
+      J. Map Pages
+      K. Profile.html
+      L. Error Pages
+      M. Ecommerce Pages
+      N. Search Result Page
+      O. Bootstrap Timeout Page - Added update v1.4
+=================================================
+*/
+
+/* ==============================================
+   Page Footer
+================================================= */
+#content-footer {
+    color: #AAA;
+    overflow: hidden;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 44px;
+    padding: 12px 15px;
+    background-color: #f8f8f8;
+    border-top: 1px solid #DDD;
+    -webkit-transition: margin 0.2s ease;
+    transition: margin 0.2s ease;
+}
+#content-footer b {
+    color: #888;
+}
+#content-footer .footer-meta {
+    padding-right: 30px;
+}
+#content-footer .footer-return-top {
+    text-align: center;
+    position: absolute;
+    top: -3px;
+    right: 5px;
+    width: 25px;
+    height: 25px;
+    background-color: #eaeaea;
+    -webkit-border-radius: 3px;
+    border-radius: 3px;
+    -webkit-transition: all 0.2s ease;
+    transition: all 0.2s ease;
+}
+#content-footer .footer-return-top span {
+    position: relative;
+    top: 3px;
+    color: #AAA;
+    font-size: 12px;
+    -webkit-transition: all 0.23s ease;
+    transition: all 0.2s ease;
+}
+#content-footer .footer-return-top:hover {
+    cursor: pointer;
+    background-color: #e2e2e2;
+}
+#content-footer .footer-return-top:hover span {
+    color: #666;
+}
+/* Fixed Setting */
+#content-footer.affix {
+    z-index: 1;
+    position: fixed;
+    margin-left: 230px;
+}
+/* Match Sidebar States */
+body.sb-l-c #content-footer.affix {
+    margin-left: 0;
+}
+body.sb-l-m #content-footer.affix {
+    margin-left: 60px;
+}
+@media (max-width: 900px) {
+    body.sb-l-m #content-footer.affix {
+        margin-left: 45px;
+    }
+}
+
+
+/*
+=================================================
+  A. UI Animations Page
+=================================================
+*/
+body.ui-animations-page #mac_wire {
+    margin-top: 2.5%;
+    margin-left: 3.5%;
+    position: fixed;
+    max-width: 440px;
+}
+
+body.ui-animations-page.svg-fill #mac_wire svg path:first-child {
+    fill-opacity: 1;
+    fill: #ccc;
+    stroke: #999;
+    stroke-width: 1px;
+    -webkit-transition: all ease 0.5s;
+    transition: all ease 0.5s;
+}
+
+body.ui-animations-page.svg-fill #mac_wire svg path:last-child {
+    fill-opacity: 1;
+    fill: #555;
+    stroke: #555;
+    stroke-width: 3px;
+    -webkit-transition: all ease 1s;
+    transition: all ease 1s;
+}
+
+body.ui-animations-page .tray-center:after {
+    opacity: 0;
+    position: fixed;
+    content: "\f04b";
+    font-family: "FontAwesome";
+    font-size: 46px;
+    color: #3bafda;
+    bottom: 10px;
+    padding-left: 20px;
+    -webkit-transition: opacity 0.5s ease-in-out;
+    transition: opacity 0.5s ease-in-out;
+}
+
+body.ui-animations-page.animation-running .tray-center:after {
+    opacity: 0.75;
+}
+
+body.ui-animations-page.animation-running .btn.btn-alt {
+    opacity: 0.5;
+}
+
+body.ui-animations-page.animation-running .btn.btn-alt.item-checked {
+    opacity: 1;
+    -webkit-transition: opacity 0.2s ease;
+    transition: opacity 0.2s ease;
+}
+
+
+/*===============================================
+  C. Gallery Page
+================================================= */
+
+body.gallery-page #mix-container {
+    padding: 15px;
+    text-align: justify;
+    font-size: 0.1px;
+}
+
+body.gallery-page #mix-container:after {
+    content: "";
+    display: inline-block;
+    width: 100%;
+}
+
+body.gallery-page #mix-container .mix,
+body.gallery-page #mix-container .gap {
+    display: none;
+    vertical-align: top;
+    width: 23.5%;
+    margin-bottom: 20px;
+}
+
+body.gallery-page #mix-container .gap {
+    display: inline-block;
+}
+
+body.gallery-page #mix-container .mix .panel {
+    margin: 0;
+}
+
+body.gallery-page #mix-container .mix .panel img {
+    cursor: pointer;
+}
+
+body.gallery-page .fail-message {
+    display: none;
+    text-align: center;
+    font-size: 22px;
+    color: #999;
+    margin-top: 50px;
+}
+
+body.gallery-page .fail .fail-message {
+    display: block;
+}
+
+@media (max-width: 1350px) {
+    body.gallery-page #mix-container .mix,
+    body.gallery-page #mix-container .gap {
+        width: 31.5%;
+    }
+}
+
+@media (max-width: 750px) {
+    body.gallery-page #mix-container .mix,
+    body.gallery-page #mix-container .gap {
+        width: 48%;
+    }
+}
+
+
+/*===============================================
+  D. Calendar Page
+================================================= */
+
+body.calendar-page .fc-title-clone {
+    font-size: 20px;
+    text-align: center;
+    margin: 8px 0 10px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #E7E7E7;
+}
+
+body.calendar-page .tray-left .ui-datepicker {
+    background: none;
+    margin: 0;
+    border: 0;
+}
+
+body.calendar-page .tray-left .ui-datepicker-header {
+    display: none;
+}
+
+body.calendar-page .tray-left .ui-datepicker td {
+    padding: 8px 5px;
+}
+
+body.calendar-page .tray-left .ui-datepicker td span,
+body.calendar-page .tray-left .ui-datepicker td a {
+    background: #DDD;
+    padding: .50em .20em;
+}
+
+body.calendar-page .tray-left #compose-event-btn {
+    cursor: pointer;
+    position: relative;
+    top: 1px;
+    padding-left: 8px;
+    color: #888;
+    font-size: 16px;
+}
+
+body.calendar-page .tray-center .fc-toolbar .fc-center h2 {
+    font-size: 20px;
+    line-height: 26px;
+    font-weight: 400;
+}
+
+@media (max-width: 900px) {
+    body.calendar-page .fc-toolbar .fc-center {
+        margin-top: 20px;
+        margin-bottom: 10px;
+    }
+}
+
+@media (max-width: 600px) {
+    body.calendar-page .fc-view-container {
+        margin-bottom: 30px;
+    }
+    body.calendar-page .fc-toolbar .fc-button {
+        padding: 4px 8px;
+    }
+    body.calendar-page .fc-toolbar .fc-right {
+        float: left;
+        margin-left: 10px;
+    }
+    body.calendar-page .fc-toolbar .fc-center {
+        float: left;
+        width: 100%;
+    }
+    body.calendar-page .fc-toolbar .fc-center h2 {
+        float: none;
+        text-align: center;
+    }
+    body.calendar-page .fc-title-clone {
+        display: none;
+    }
+    body.calendar-page #external-events {
+        padding: 15px 10px 10px;
+        background: #e8e8e8;
+        border: 1px solid #ccc;
+    }
+}
+
+
+/*===============================================
+  E. Messages Page
+================================================= */
+
+body.messages-page .message-menu {
+    padding: 10px 15px;
+    background-color: #FFF;
+    border-bottom: 1px solid #EEE;
+}
+
+body.messages-page .compose-btn {
+    font-weight: 600;
+    margin-top: 2px;
+    margin-bottom: 12px;
+    padding: 11px 15px;
+}
+
+body.messages-page .nav-messages li a {
+    color: #AAA;
+}
+
+body.messages-page .nav-messages li.active a,
+body.messages-page .nav-messages li:hover a,
+body.messages-page .nav-messages li:focus a {
+    color: #666;
+}
+
+body.messages-page .message-view {
+    padding: 20px;
+}
+
+body.messages-page .message-view h3.subject {
+    margin-top: 0;
+    font-size: 17px;
+}
+
+body.messages-page .message-view hr {
+    border-color: #EEE;
+}
+
+body.messages-page .message-reply .note-editor .note-toolbar {
+    background: #fcfcfc;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+    padding-top: 7px;
+    padding-bottom: 14px;
+}
+
+body.messages-page .message-reply .note-editor .note-toolbar .btn-group:first-child {
+    margin-left: 0;
+}
+
+body.messages-page .message-reply .note-editor .btn-default {
+    padding: 5px 10px 6px;
+}
+
+body.messages-page .message-reply .note-editor .note-editable {
+    font-size: 14px;
+    padding: 15px 10px;
+}
+
+body.messages-page #message-table > tbody > tr {
+    cursor: pointer;
+}
+
+body.messages-page #message-table > tbody > tr.highlight > td {
+    background-color: #FFFEF0;
+}
+
+body.messages-page .quick-compose-form {
+    display: none;
+}
+
+body.messages-page .dockmodal-header .title-text {
+    font-size: 15px;
+}
+
+body.messages-page .dockmodal-body {
+    padding: 0;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+body.messages-page .dockmodal-footer {
+    background-color: #f3f3f3;
+    padding: 7px 10px 8px;
+    border-top: 1px solid #DDD;
+    border-left: 1px solid #DDD;
+    border-right: 1px solid #DDD;
+}
+
+body.messages-page .dockmodal-body .quick-compose-form {
+    display: block;
+}
+
+body.messages-page .dockmodal-body .quick-compose-form input.form-control {
+    border: 0;
+    border-bottom: 1px solid #EEE;
+}
+
+body.messages-page .dockmodal-body .quick-compose-form .note-editor .note-editable {
+    background: #f9f9f9;
+}
+
+body.messages-page .popped-out .dockmodal-body .quick-compose-form .note-editor .note-editable {
+    background: #fff;
+}
+
+body.messages-page .dockmodal-body .quick-compose-form .note-editor .note-editable:focus,
+body.messages-page .dockmodal-body .quick-compose-form .note-editor .note-editable:active {
+    background: #fff;
+}
+
+body.messages-page .dockmodal-body .quick-compose-form .note-editor .note-toolbar {
+    padding: 0 4px 9px;
+}
+
+body.messages-page .dockmodal-body .quick-compose-form .note-editor .note-statusbar .note-resizebar {
+    display: none;
+}
+
+@media (max-width: 1020px) {
+    body.messages-page.tray-rescale #content.table-layout .tray-center {
+        padding-right: 65px !important;
+    }
+    /* creates a mini message tray, expands it on user hover */
+    body.messages-page .message-tray {
+        height: 175px;
+        overflow: hidden;
+        -webkit-transition: height 0.5s ease;
+        transition: height 0.5s ease;
+    }
+    /* set to the height of your message menu */
+    body.messages-page .message-tray:hover {
+        height: 665px;
+    }
+}
+
+@media (max-width: 600px) {
+    body.messages-page.tray-rescale #content.table-layout .tray-center {
+        padding: 0px !important;
+    }
+}
+
+
+/*===============================================
+  Editors Page
+================================================= */
+
+body.editors-page .panel .panel-heading {
+    border-bottom-color: #CCC;
+}
+
+
+/*===============================================
+  G. External Pages - login, register,
+  screenlock, coming-soon, forgotpw
+================================================= */
+
+body.external-page {
+    min-height: 0;
+    overflow: auto;
+}
+
+body.external-page #main {
+    overflow: hidden;
+    /*background: url("../img/patterns/backgrounds/1.jpg") no-repeat top center #2d494d;*/
+    background-color:#33868A;
+}
+
+body.external-page #main:before {
+    display: none;
+}
+
+body.external-page #canvas-wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+}
+
+body.external-page #content .admin-form {
+    position: relative;
+    width: 100%;
+    max-width: 800px;
+    margin: 0 auto;
+    margin-top: 8%;
+}
+
+body.external-page #content .panel {
+    box-shadow: 0 1px 40px 0 rgba(0, 0, 0, 0.3);
+}
+
+body.external-page #content .panel-heading {
+    padding: 32px 10px 15px;
+}
+
+body.external-page .login-links {
+    font-size: 15px;
+    color: #DDD;
+}
+
+body.external-page .login-links a {
+    color: #DDD;
+    font-weight: 300;
+}
+
+body.external-page .login-links a.active {
+    color: #FFF;
+    font-weight: 600;
+}
+
+body.external-page .login-links a:hover,
+body.external-page .login-links a:focus {
+    color: #FFF;
+    text-decoration: none;
+}
+
+body.external-page .coming-soon-title {
+    text-align: center;
+    color: #FFF;
+    font-size: 40px;
+    font-weight: 400;
+    margin-top: 70px;
+    margin-bottom: 20px;
+}
+
+
+/*===============================================
+  Invoice.html
+================================================= */
+
+body.invoice-page #invoice-info {
+    margin-bottom: 15px;
+}
+
+body.invoice-page .table-condensed tbody tr td:last-child {
+    text-align: right;
+    padding-right: 15px;
+}
+
+body.invoice-page #invoice-summary {
+    margin: 0;
+}
+
+body.invoice-page #invoice-summary thead th:first-child {
+    text-align: right;
+    width: 200px;
+    padding-right: 55px;
+}
+
+body.invoice-page #invoice-summary thead th:last-child {
+    width: 50px;
+    font-weight: 400;
+}
+
+body.invoice-page #invoice-summary tbody tr td {
+    border-top: 0;
+}
+
+body.invoice-page #invoice-summary tbody tr td:first-child {
+    text-align: right;
+    width: 200px;
+    padding-right: 55px;
+}
+
+body.invoice-page #invoice-summary tbody tr:last-child td {
+    background: #fafafa;
+    border-top: 1px solid #EEE;
+    border-bottom: 1px solid #EEE;
+    height: 24px;
+    line-height: 24px;
+}
+
+body.invoice-page .invoice-buttons {
+    position: absolute;
+    left: 15px;
+    bottom: 10px;
+}
+
+
+/*===============================================
+  I. Timeline.html
+================================================= */
+
+body.timeline-page #main {
+    min-height: 1400px;
+}
+
+body.timeline-page #content {
+    padding: 8px 35px 50px 35px;
+}
+
+#timeline {
+    position: relative;
+}
+
+#timeline:after {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 4px;
+    margin-left: -2px;
+    height: 100%;
+    content: "";
+    background: #ddd;
+}
+
+#timeline .timeline-divider {
+    position: relative;
+    margin: 10px 0 45px;
+    z-index: 3;
+}
+
+#timeline .timeline-divider .divider-label {
+    position: relative;
+    width: 110px;
+    margin: 0 auto;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid #DDD;
+    color: #777;
+    font-weight: 600;
+    background: #FFF;
+}
+
+#timeline .timeline-divider .divider-label:before {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    left: 0;
+    top: 100%;
+    background: #4a89dc;
+}
+
+#timeline .panel {
+    position: relative;
+    z-index: 11;
+    overflow: visible;
+    margin-bottom: 30px;
+}
+
+#timeline .panel:before,
+#timeline .panel:after {
+    content: "";
+    z-index: 2;
+    position: absolute;
+    top: 10px;
+    left: 99.8%;
+    width: 0;
+    height: 0;
+    border-style: solid;
+    border-width: 8px 0 8px 12px;
+    border-color: transparent transparent transparent #fafafa;
+}
+
+#timeline .panel:after {
+    z-index: 1;
+    border-left-color: #666;
+}
+
+#timeline .right-column .panel:before,
+#timeline .right-column .panel:after {
+    top: 10px;
+    right: 99.8%;
+    left: auto;
+    border-width: 8px 12px 8px 0;
+    border-color: transparent #fafafa transparent transparent;
+}
+
+#timeline .right-column .panel:after {
+    border-right-color: #666;
+}
+
+#timeline > .row > .left-column .timeline-item {
+    padding-right: 30px;
+}
+
+#timeline > .row > .right-column .timeline-item {
+    padding-left: 30px;
+}
+
+#timeline > .row > .right-column {
+    margin-top: 80px;
+}
+
+@media (max-width: 770px) {
+    #timeline > .row > .left-column .panel {
+        margin-right: 0;
+    }
+    #timeline > .row > .right-column .panel {
+        margin-left: 0;
+    }
+    #timeline > .row .panel:before {
+        display: none;
+    }
+    #timeline > .row .panel:after {
+        display: none;
+    }
+}
+
+#timeline .tab-content {
+    min-height: 0;
+}
+
+#timeline .map {
+    width: 100%;
+    height: 275px;
+}
+
+#timeline #timeline-image-form .fileupload-preview {
+    text-align: center;
+}
+
+#timeline #timeline-image-form .fileupload-preview img {
+    max-height: 200px;
+}
+
+#timeline .timeline-icon {
+    z-index: 1;
+    position: absolute;
+    right: -18px;
+    width: 38px;
+    height: 38px;
+    line-height: 38px;
+    font-size: 20px;
+    color: #FFF;
+    text-align: center;
+    border-radius: 50%;
+    background: #eeeeee;
+    box-shadow: 0 0 0 5px #eeeeee;
+}
+
+#timeline .right-column .timeline-icon {
+    right: auto;
+    left: -18px;
+}
+
+#timeline.timeline-single {
+    margin-left: 6%;
+    max-width: 750px;
+}
+
+#timeline.timeline-single:after {
+    left: 0;
+}
+
+#timeline.timeline-single > .row > .col-sm-6 {
+    width: 100%;
+    padding-left: 65px;
+}
+
+#timeline.timeline-single > .row > .right-column {
+    margin-top: 0;
+}
+
+#timeline.timeline-single > .row > .right-column .timeline-item,
+#timeline.timeline-single > .row > .left-column .timeline-item {
+    padding-left: 0;
+    padding-right: 0;
+}
+
+#timeline.timeline-single .timeline-divider .divider-label {
+    margin-left: -55px;
+}
+
+#timeline.timeline-single .timeline-icon {
+    left: -8px;
+    right: auto;
+}
+
+#timeline.timeline-single .panel:before,
+#timeline.timeline-single .panel:after {
+    right: 99.8%;
+    left: auto;
+    border-width: 8px 12px 8px 0;
+    border-color: transparent #fafafa transparent transparent;
+}
+
+#timeline.timeline-single .panel:after {
+    border-right-color: #666;
+}
+
+
+/*===============================================
+  J. Map Pages - Full, Vector
+================================================= */
+
+.maps-full-page,
+.maps-vector-page {
+    /*responsive expanding header styles*/
+}
+
+.maps-full-page #main,
+.maps-vector-page #main,
+.maps-full-page #content_wrapper,
+.maps-vector-page #content_wrapper,
+.maps-full-page #content,
+.maps-vector-page #content,
+.maps-full-page .map,
+.maps-vector-page .map {
+    height: 100%;
+    min-height: 0;
+}
+
+.maps-full-page #content,
+.maps-vector-page #content {
+    padding: 1px;
+    max-width: 1920px !important;
+}
+
+.maps-full-page .map,
+.maps-vector-page .map {
+    height: 100% !important;
+}
+
+.maps-full-page .expanding-header,
+.maps-vector-page .expanding-header {
+    overflow: hidden;
+    z-index: 999;
+    position: absolute;
+    top: 20px;
+    left: 30px;
+    width: 550px;
+    height: 43px;
+    background: rgba(0, 0, 0, 0.5);
+    border-radius: 2px;
+    -webkit-transition: all 0.2s ease-in-out;
+    transition: all 0.2s ease-in-out;
+}
+
+.maps-full-page .expanding-header.collapsed,
+.maps-vector-page .expanding-header.collapsed {
+    width: 48px;
+    overflow: hidden;
+}
+
+.maps-full-page .expanding-header .map-header-icon,
+.maps-vector-page .expanding-header .map-header-icon {
+    cursor: pointer;
+    width: 47px;
+    padding: 10px 13px;
+    color: #FFF;
+    font-size: 22px;
+    float: left;
+    margin-right: 10px;
+}
+
+.maps-full-page .expanding-header .flag-sm,
+.maps-vector-page .expanding-header .flag-sm {
+    cursor: pointer;
+}
+
+.maps-full-page .expanding-header input.form-control,
+.maps-vector-page .expanding-header input.form-control {
+    min-width: 250px;
+}
+
+@media (max-width: 800px) {
+    .maps-full-page .expanding-header,
+    .maps-vector-page .expanding-header {
+        display: none;
+    }
+}
+
+.maps-full-page .expanding-header {
+    top: 24px;
+    left: 90px;
+}
+
+
+/*===============================================
+  K. Profile.html
+================================================= */
+
+body.profile-page #content .tab-block .nav-tabs > li > a {
+    padding: 9px 35px;
+}
+
+
+/*===============================================
+  L. Error Pages - 404, 500 (plus alt pages)
+================================================= */
+
+body.error-page #main:before {
+    background: #F5F5F5;
+}
+
+body.error-page #return-arrow {
+    top: 75px;
+    padding-top: 0;
+}
+
+body.error-page .error-title {
+    font-size: 140px;
+    font-weight: 800;
+    color: #4a89dc;
+    text-align: center;
+    padding-top: 60px;
+    margin-bottom: 20px;
+    line-height: 120px;
+}
+
+body.error-page .error-subtitle {
+    font-weight: 400;
+    text-align: center;
+    font-size: 40px;
+    color: #AAA;
+    margin-bottom: 80px;
+}
+
+body.error-page .mid-section {
+    position: relative;
+    width: 100%;
+    height: 215px;
+    background: #FFF;
+    border-top: 1px solid #E6E6E6;
+    border-bottom: 1px solid #E6E6E6;
+}
+
+body.error-page .mid-content {
+    position: relative;
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 50px 20px 35px;
+}
+
+body.error-page .mid-content input {
+    color: #AAA;
+    height: 55px;
+    border-radius: 1px;
+    padding: 10px 20px;
+    border: 0;
+    font-size: 16px;
+    border: 1px solid #EEE;
+    border-left: 5px solid #4a89dc;
+    background: #FBFBFB;
+}
+
+body.error-page .error-page.alt .error-title {
+    padding-top: 110px;
+}
+
+body.error-page #search-widget {
+    background: #f1f1f1;
+}
+
+body.error-page .error-icon {
+    font-size: 80px;
+    position: relative;
+    top: -10px;
+}
+
+body.error-page .error-text {
+    font-size: 120px;
+    text-align: center;
+    text-shadow: 0 2px #FFF;
+    color: #888;
+    width: 100%;
+}
+
+
+/*===============================================
+  M. Ecommerce Page - Added update v1.3
+================================================= */
+
+.ecommerce-page {
+    /* fileupload field styling */
+    /*select filter dropdowns - psuedo placeholder */
+    /* creates extra spacing for first timeline item */
+    /* bg-light style of bootstrap-tags input */
+}
+
+.ecommerce-page .fileupload .thumbnail {
+    position: relative;
+    cursor: pointer;
+    overflow: hidden;
+}
+
+.ecommerce-page .fileupload .thumbnail:empty {
+    min-height: 150px;
+    -webkit-transition: all 0s ease;
+    transition: all 0s ease;
+}
+
+.ecommerce-page .fileupload .thumbnail:empty:before {
+    content: "";
+    position: absolute;
+    display: block;
+    top: 6px;
+    right: 6px;
+    bottom: 6px;
+    left: 6px;
+    z-index: 0;
+    background-color: #EEE;
+}
+
+.ecommerce-page .admin-form select option {
+    color: black !important;
+}
+
+.ecommerce-page .empty {
+    color: #BBB !important;
+}
+
+.ecommerce-page ol.timeline-list li.timeline-item:first-child:after {
+    top: -25px;
+    height: 140%;
+}
+
+.ecommerce-page input.bg-light + .bootstrap-tagsinput,
+.ecommerce-page input.bg-light + .bootstrap-tagsinput .tag:hover,
+.ecommerce-page input.bg-light + .bootstrap-tagsinput .tag:focus {
+    background-color: #FAFAFA;
+}
+
+
+/*===============================================
+  N. Search Results Page - Added update v1.4
+================================================= */
+
+.search-results-page .search-result + .search-result {
+    margin-top: 31px;
+    padding-top: 20px;
+    border-top: 1px dashed #DDD;
+}
+
+.search-results-page .search-result h3,
+.search-results-page .search-result > a {
+    display: block;
+    margin-bottom: 5px;
+}
+
+.search-results-page ul.result-meta {
+    list-style: none;
+    padding-left: 0;
+    margin-left: -5px;
+    margin-bottom: 5px;
+}
+
+.search-results-page ul.result-meta > li {
+    position: relative;
+    display: inline-block;
+    padding-left: 5px;
+    padding-right: 5px;
+}
+
+.search-results-page ul.result-meta > li + li {
+    padding-left: 12px;
+}
+
+.search-results-page ul.result-meta > li + li:after {
+    content: "-";
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+
+.search-results-page ul.result-meta > li > a {
+    font-size: 13px;
+    color: #999;
+}
+
+
+/*===============================================
+  O. Bootstrap Timeout Page - Added update v1.4
+================================================= */
+
+#session-timeout-dialog .modal-dialog {
+    width: 102%;
+    height: 100%;
+    background: rgba(255, 255, 255, 0.93);
+    margin-top: 0;
+    margin-bottom: 0;
+    padding-top: 15%;
+    text-align: center;
+    border-radius: 1px;
+}
+
+#session-timeout-dialog .modal-content {
+    background: none;
+    box-shadow: none;
+    border: 1px solid #DDD;
+    width: 600px;
+    margin: 0 auto;
+}
+
+#session-timeout-dialog .modal-header {
+    background-color: #f6f6f6;
+}
+
+#session-timeout-dialog .modal-body {
+    padding: 30px 20px;
+    font-size: 16px;
+    background-color: #fff;
+}
+
+#session-timeout-dialog .modal-footer {
+    text-align: center;
+    background-color: #f6f6f6;
+}

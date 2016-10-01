@@ -1,0 +1,289 @@
+/* ==============================================
+   III. DEMO PAGES
+      - Global Changes
+
+ * This file is reserved for changes required only
+ * for the themes demo. These styles may be vital
+ * to themes appearance but often times will not
+ * be useful in a true production environment.
+
+ * For example each slider in sliders.html has a
+ * margin of 65px, a large number only needed
+ * because six sliders have been stacked on top
+ * of each other. This would most likely not
+ * happen in a real enviroment.
+=================================================
+ A. Global/Shared
+================================================= */
+.ajax-loading {
+    overflow-y: scroll;
+}
+.panel-tabs > li > a:hover {
+    background-color: #f2f2f2;
+}
+#return-arrow {
+    color: #555;
+    padding-left: 15px;
+    padding-top: 15px;
+    position: fixed;
+    opacity: 0.7;
+    cursor: pointer;
+    display: block;
+    z-index: 1050;
+}
+#return-arrow i.fa {
+    float: left;
+    padding-top: 2px;
+}
+#return-arrow span {
+    float: left;
+    padding-left: 15px;
+    padding-top: 0px;
+    font-size: 16px;
+}
+#return-arrow:hover {
+    opacity: 1;
+}
+/*===============================================
+  timeline.html/timeline-single.html
+================================================= */
+body.timeline-page .panel-clone {
+    display: none;
+}
+/*===============================================
+  pages-calendar-page.html
+================================================= */
+.calendar-page .tray-left {
+    padding: 15px 18px;
+}
+.calendar-page .tray-left .fc-event {
+    margin-left: 2px;
+    margin-right: 2px;
+    background: #FFF;
+}
+/*===============================================
+  ui-icons.html
+================================================= */
+.icon-demo-list {
+    font-size: 12px;
+    padding-left: 0;
+    padding-bottom: 1px;
+    margin-bottom: 20px;
+    list-style: none;
+    overflow: hidden;
+}
+.icon-demo-list li {
+    float: left;
+    width: 20%;
+    height: 100px;
+    padding: 5px;
+    line-height: 1.4;
+    text-align: center;
+}
+.icon-demo-list li:hover {
+    color: #4a89dc;
+}
+.icon-demo-list li span {
+    display: block;
+    margin: 5px auto 15px;
+    font-size: 24px;
+}
+.iconsweets-list li span {
+    font-size: 32px;
+}
+.stateface-list li span {
+    font-size: 36px;
+}
+/*===============================================
+  Skin Toolbox
+================================================= */
+#skin-toolbox {
+    z-index: 999;
+    overflow: visible !important;
+    position: fixed;
+    top: 120px;
+    right: -230px;
+    width: 230px;
+    -webkit-transition: right 0.1s ease-in-out;
+    -moz-transition: right 0.1s ease-in-out;
+    transition: right 0.1s ease-in-out;
+}
+#skin-toolbox.toolbox-open {
+    right: 0;
+}
+#skin-toolbox .panel-heading {
+    cursor: pointer;
+    margin-right: 30px;
+    border: 1px solid #DDD;
+    width: 274px;
+    height: 47px;
+    line-height: 42px;
+    right: 44px;
+    font-size: 14px;
+}
+#skin-toolbox .panel-heading .panel-title {
+    padding-left: 40px;
+}
+#skin-toolbox .panel-body {
+    border: 1px solid #DDD;
+    border-top: 0;
+    padding: 23px;
+}
+#skin-toolbox .panel-icon {
+    font-size: 22px;
+    padding-right: 20px;
+    padding-left: 6px;
+}
+/*===============================================
+  Source Code Viewer
+================================================= */
+.bs-component {
+    position: relative;
+}
+#source-button {
+    position: absolute;
+    top: 0;
+    right: 0;
+    z-index: 100;
+    font-weight: 600;
+}
+#source-modal {
+    /* source code modal styles */
+    /* highlight js styles */
+}
+#source-modal .modal-header {
+    background-color: #fafafa;
+}
+#source-modal .btn-clipboard {
+    letter-spacing: 0.5px;
+}
+#source-modal .hljs {
+    padding: 10px 13px;
+}
+/*===============================================
+  AdminDock Example Page
+================================================= */
+/* Demo styles */
+#dock-content > div {
+    display: none;
+}
+#dock-content > div.active-content {
+    display: block;
+}
+#dock-content .active-content .modal-placeholder {
+    position: relative;
+    visibility: visible;
+    display: block;
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    font-size: 20px;
+}
+#dock-content .active-content .modal-placeholder:before {
+    content: "It's been sent to AdminDock!";
+}
+#dock-content .active-content .modal-placeholder:after {
+    content: "\f0a7";
+    font-family: "FontAwesome";
+    font-size: 30px;
+    position: relative;
+    top: 3px;
+    padding-left: 20px;
+    color: #999;
+}
+/*===================================================
+   PRINT STYLES - Designed soley for Invoice Page
+   Problems will arise if you attempt to use
+   these styles globally
+=====================================================*/
+@media print {
+    .invoice-page {
+        /* Reset + Hide Primary Page Components */
+        /* Modify Primary Container */
+        /* Shorten and center page */
+        /* Remove all Panel Borders */
+        /* Hide Image Logo and reveal Text logo */
+        /* Modify Invoice Container */
+        /* Modify Invoice Panels */
+        /* Modify Invoice Panels */
+    }
+    .invoice-page header.navbar,
+    .invoice-page #sidebar_left,
+    .invoice-page #sidebar_right,
+    .invoice-page #topbar,
+    .invoice-page #skin-toolbox,
+    .invoice-page .panel-heading,
+    .invoice-page .invoice-buttons {
+        display: none !important;
+        visibility: hidden;
+        width: 0 !important;
+        height: 0 !important;
+        outline: 0;
+        padding: 0 !important;
+        margin: 0 !important;
+        overflow: hidden;
+    }
+    .invoice-page #content_wrapper {
+        background: 0;
+        margin: 0 auto !important;
+        padding: 0 !important;
+        left: auto !important;
+        right: auto !important;
+        transition: none;
+    }
+    .invoice-page #content {
+        padding: 0;
+        background: none;
+    }
+    .invoice-page #content_wrapper:after {
+        margin: 0;
+        display: none;
+    }
+    .invoice-page #main {
+        width: 1100px !important;
+        margin: 0 auto !important;
+    }
+    .invoice-page .panel,
+    .invoice-page .panel-body {
+        border: 0 !important;
+        margin: 0 !important;
+        box-shadow: none !important;
+    }
+    .invoice-page .invoice-logo {
+        display: none !important;
+    }
+    .invoice-page .invoice-logo-text {
+        display: block !important;
+        visibility: visible !important;
+    }
+    .invoice-page .table-layout > .col-md-10 {
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    .invoice-page #invoice-info {
+        border-top: 1px dashed #ddd;
+        border-bottom: 1px dashed #ddd;
+        margin-top: 20px !important;
+        margin-bottom: 40px !important;
+        background-color: #ddd;
+    }
+    .invoice-page #invoice-info > .col-md-4 {
+        float: none;
+        display: inline-block;
+        width: 32%;
+        padding: 0;
+        margin: 0;
+    }
+    .invoice-page #invoice-info > .col-md-4:nth-child(2) {
+        text-align: center;
+    }
+    .invoice-page #invoice-info > .col-md-4:last-child {
+        text-align: right;
+        position: relative;
+        top: 8px;
+    }
+    .invoice-page #invoice-info > .col-md-4 .panel-body {
+        padding: 10px;
+    }
+}
+
