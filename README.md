@@ -8,6 +8,7 @@
 > - 支持发送连接/图片附件
 > - 查看历史聊天记录
 > - 用户上线与隐身
+
 1 . 安装swoole 
 >  pecl install swoole
 
