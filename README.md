@@ -8,3 +8,16 @@
 > - 支持发送连接/图片附件
 > - 查看历史聊天记录
 > - 用户上线与隐身
+1 . 安装swoole 
+>  pecl install swoole
+
+### 
+
+2 . 安装redis
+>  pecl install redis
+
+### 
+
+启动websocket服务器
+
+> php   chat/webroot/main.php sock_ws
