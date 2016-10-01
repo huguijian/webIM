@@ -1,4 +1,4 @@
-WOOLE的在线聊天WebIM
+## 基于SWOOLE的在线聊天WebIM
 功能介绍：
 > - 在线好友及群查找加入
 > - 支持在线单聊与群聊
@@ -27,6 +27,6 @@ http://im.classba.com.cn/main.php
 > php   chat/webroot/main.php sock_ws
 ### 
 
-访问地址
-根据自身服务器配置虚拟主机域名(执行脚本文件webroot/main.php)
+##访问地址
+根据自身服务器配置虚拟主机域名(访问脚本文件webroot/main.php)
 http://im.classba.com.cn/main.php
