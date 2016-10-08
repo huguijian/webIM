@@ -121,6 +121,4 @@ BEGIN;
 INSERT INTO `ct_user_tree` VALUES ('93', '4', '3', '29', null), ('94', '3', '4', '30', null), ('95', '3', '9', '31', null), ('96', '9', '3', '35', null);
 COMMIT;
 
-
-
 SET FOREIGN_KEY_CHECKS = 1;
