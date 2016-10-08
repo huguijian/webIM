@@ -19,7 +19,6 @@ class main implements IController
             ));
         }
         $this->params = Request::getParams();
-        return true;
     }
 
     public function _after()
