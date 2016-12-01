@@ -24,7 +24,7 @@ http://im.classba.com.cn/main.php
 
 启动websocket服务器
 
-> php   chat/webroot/main.php sock_ws
+> php   chat/webroot/main.php socket_ws
 ### 
 
 ##访问地址
